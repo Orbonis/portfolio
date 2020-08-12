@@ -11,10 +11,10 @@ export class TableComponent extends React.Component<IProperties, {}> {
         const data: JSX.Element[] = [];
         const combined: JSX.Element[] = [];
         for (const key in this.props.data) {
-            headers.push(<th>{ key }</th>);
-            data.push(<td>{ this.props.data[key] }</td>);
+            headers.push(<th key={key}>{ key }</th>);
+            data.push(<td key={this.props.data[key]}>{ this.props.data[key] }</td>);
             combined.push(
-                <tr>
+                <tr key={this.props.data[key]}>
                     <th>{ key }</th>
                     <td>{ this.props.data[key] }</td>
                 </tr>
@@ -22,16 +22,22 @@ export class TableComponent extends React.Component<IProperties, {}> {
         }
 
         return [
-            <table className={(this.props.type === "platform") ? "desktopOnly" : "landscapeOnly"}>
-                <tr>
-                    { headers }
-                </tr>
-                <tr>
-                    { data }
-                </tr>
+            <table key="table-desktop" className={(this.props.type === "platform") ? "desktopOnly" : "landscapeOnly"}>
+                <thead>
+                    <tr>
+                        { headers }
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        { data }
+                    </tr>
+                </tbody>
             </table>,
-            <table className={(this.props.type === "platform") ? "mobileOnly" : "portraitOnly"}>
-                { combined }
+            <table key="table-mobile" className={(this.props.type === "platform") ? "mobileOnly" : "portraitOnly"}>
+                <tbody>
+                    { combined }
+                </tbody>
             </table>
         ];
     }

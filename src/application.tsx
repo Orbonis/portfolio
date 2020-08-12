@@ -30,7 +30,7 @@ export class Application extends React.Component<{}, IAppState> {
         this.state = {
             screen: params["page"] as Screens,
             params,
-            theme: (theme) ? theme as "light" | "dark" : "light",
+            theme: (theme) ? theme as "light" | "dark" : "dark",
             refresh: () => this.setState(this.state)
         };
 

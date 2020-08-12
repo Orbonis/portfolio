@@ -88,17 +88,11 @@ body {
     br {
         margin-top: 1em;
     }
-}
 
-.page-contents.top {
-    padding-bottom: 2em;
-}
+    b {
+        color: var(--primary-color);
+    }
 
-.page-contents.bottom {
-    padding-top: 2em;
-}
-
-.present {
     table {
         width: 80%;
         margin: 1em auto 1em auto;
@@ -120,6 +114,21 @@ body {
             padding: 0.4em;
         }
     }
+
+    table.interactive {
+        tr:hover {
+            cursor: pointer;
+            background-color: var(--background-color);
+        }
+    }
+}
+
+.page-contents.top {
+    padding-bottom: 2em;
+}
+
+.page-contents.bottom {
+    padding-top: 2em;
 }
 
 .desktop.home {
