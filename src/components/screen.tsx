@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Container, Segment, Dimmer, Loader, Message, Grid } from "semantic-ui-react";
-import { IAppState } from "src/application";
+import { Container, Segment, Dimmer, Loader, Message, Grid, Step } from "semantic-ui-react";
+import { IAppState, Screens } from "src/application";
 
 export interface IScreenProperties {
     app: IAppState;
@@ -34,7 +34,7 @@ export class Screen<P extends IScreenProperties, S extends IScreenState> extends
                         />
                     </Grid.Row>
                     <Grid.Row stretched>
-                        <Segment attached="top">
+                        <Segment>
                             <div key="logo" className="logo-wrapper noselect">
                                 <div className="logo-container">
                                     <span className="logo-1">Dean </span>
@@ -45,6 +45,15 @@ export class Screen<P extends IScreenProperties, S extends IScreenState> extends
                             <div className="page-contents">
                                 { elements }
                             </div>
+                            <Step.Group>
+                                { this.renderStep("Past", "Past experiences & work", "arrow alternate circle left outline", Screens.Past) }
+                                { this.renderStep("Present", "Present occupation", "arrow alternate circle down outline", Screens.Present) }
+                                { this.renderStep("Future", "Future ambitions & goals", "arrow alternate circle right outline", Screens.Future) }
+                            </Step.Group>
+                            <br/>
+                            <Step.Group>
+                                { this.renderStep("Home", "Return to the home page", "home", Screens.Home) }
+                            </Step.Group>
                         </Segment>
                     </Grid.Row>
                 </Grid>
@@ -73,5 +82,21 @@ export class Screen<P extends IScreenProperties, S extends IScreenState> extends
                 error, content, timer
             }
         });
+    }
+
+    private renderStep(label: string, description: string, icon: string, screen: Screens): JSX.Element {
+        return (
+            <Step
+                active={this.props.app.screen === screen}
+                icon={icon}
+                link
+                onClick={() => {
+                    this.props.app.screen = screen;
+                    this.props.app.refresh();
+                }}
+                title={label}
+                description={description}
+            />
+        );
     }
 }

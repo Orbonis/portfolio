@@ -1,16 +1,19 @@
 import React from "react";
 
 import { HomeScreen } from "./screens/home";
+import { PastScreen } from "./screens/past";
+import { PresentScreen } from "./screens/present";
+import { FutureScreen } from "./screens/future";
 
 export enum Screens {
     Home = "home",
-    Portfolio = "portfolio",
-    AboutMe = "about",
-    Contact = "contact"
+    Past = "past",
+    Present = "present",
+    Future = "future"
 }
 
 export interface IAppState {
-    screens: Screens[];
+    screen: Screens;
     params: { [key: string]: string };
     refresh: Function;
 }
@@ -22,7 +25,7 @@ export class Application extends React.Component<{}, IAppState> {
         const params = this.parseSearch();
 
         this.state = {
-            screens: [ params["page"] as Screens ],
+            screen: params["page"] as Screens,
             params,
             refresh: () => this.setState(this.state)
         };
@@ -30,21 +33,35 @@ export class Application extends React.Component<{}, IAppState> {
         this.updatePage();
     }
 
-    public render(): JSX.Element {
+    public componentDidUpdate(): void {
         this.updatePage();
+    }
 
-        switch (this.state.screens[this.state.screens.length - 1]) {
+    public render(): JSX.Element {
+        switch (this.state.screen) {
             case Screens.Home:
                 return <HomeScreen app={this.state} />;
+            case Screens.Past:
+                return <PastScreen app={this.state} />;
+            case Screens.Present:
+                return <PresentScreen app={this.state} />;
+            case Screens.Future:
+                return <FutureScreen app={this.state} />;
             default:
-                this.state.screens[this.state.screens.length - 1] = Screens.Home;
-                this.setState(this.state);
+                this.setState({ screen: Screens.Home });
                 return <div></div>;
         }
     }
 
     private updatePage(): void {
-        window.history.pushState("object or string", "Dean Rutter", `/?page=${this.state.screens[this.state.screens.length - 1]}`);
+        window.history.pushState("object or string", "Dean Rutter", `/?page=${this.state.screen}`);
+
+        const element = document.getElementById("app");
+
+        for (const key in Screens) {
+            const screen: Screens = (Screens as any)[key] as Screens;
+            element?.classList.toggle(`${screen}`, this.state.screen === screen);
+        }
     }
 
     private parseSearch(): { [key: string]: string } {
