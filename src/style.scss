@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+
+.noselect {
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+}
+
+.logo-wrapper {
+    .logo-container {
+        text-align: center;
+        font-size: 3em;
+        margin: 0;
+        width: 100%;
+        padding: 1em;
+    
+        .logo-1 {
+            font-weight: 300;
+            color: rgb(51, 67, 77);
+        }
+    
+        .logo-2 {
+            font-weight: 500;
+            color: rgb(96, 134, 158);
+        }
+    
+        .logo-sub {
+            font-weight: 200;
+            font-size: 0.4em;
+            line-height: 1em;
+            margin-top: 0.7em;
+            display: block;
+            color: rgb(112, 112, 112);
+        }
+    }
+}
+
+.page-contents {
+    padding: 0em 1em 2em 1em;
+    font-weight: 300;
+    font-size: 1.2em;
+    color: rgb(112, 112, 112);
+    text-align: center;
+
+    br {
+        margin-top: 1em;
+    }
+}
+
+.desktop {
+    .logo-container {
+        font-size: 6em;
+        
+        .logo-sub {
+            margin-top: 1.4em;
+        }
+    }
+
+    .page-contents {
+        font-size: 1.5em;
+    }
+}

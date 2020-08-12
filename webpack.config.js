@@ -32,6 +32,14 @@ const data = {
                 loader: "ts-loader"
             },
             {
+                test: /\.s[ac]ss$/i,
+                use: [
+                  "style-loader",
+                  "css-loader",
+                  "sass-loader"
+                ],
+            },
+            {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
             },
@@ -54,7 +62,7 @@ const data = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-            title: "Orbonis - Portfolio"
+            title: "Dean Rutter"
         })
     ]
 };
