@@ -16,6 +16,7 @@ export interface IAppState {
     screen: Screens;
     params: { [key: string]: string };
     refresh: Function;
+    theme: "dark" | "light";
 }
 
 export class Application extends React.Component<{}, IAppState> {
@@ -24,9 +25,12 @@ export class Application extends React.Component<{}, IAppState> {
 
         const params = this.parseSearch();
 
+        const theme: string | null = localStorage.getItem("orbonis_theme");
+
         this.state = {
             screen: params["page"] as Screens,
             params,
+            theme: (theme) ? theme as "light" | "dark" : "light",
             refresh: () => this.setState(this.state)
         };
 
@@ -56,12 +60,15 @@ export class Application extends React.Component<{}, IAppState> {
     private updatePage(): void {
         window.history.pushState("object or string", "Dean Rutter", `/?page=${this.state.screen}`);
 
-        const element = document.getElementById("app");
-
         for (const key in Screens) {
             const screen: Screens = (Screens as any)[key] as Screens;
-            element?.classList.toggle(`${screen}`, this.state.screen === screen);
+            document.body.classList.toggle(`${screen}`, this.state.screen === screen);
         }
+
+        document.body.classList.toggle("light", this.state.theme === "light");
+        document.body.classList.toggle("dark", this.state.theme === "dark");
+
+        localStorage.setItem("orbonis_theme", this.state.theme);
     }
 
     private parseSearch(): { [key: string]: string } {

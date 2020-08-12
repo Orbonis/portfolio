@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, Segment, Dimmer, Loader, Message, Grid, Step } from "semantic-ui-react";
+import { Container, Segment, Dimmer, Loader, Message, Grid, Button } from "semantic-ui-react";
 import { IAppState, Screens } from "src/application";
 
 export interface IScreenProperties {
@@ -35,7 +35,18 @@ export class Screen<P extends IScreenProperties, S extends IScreenState> extends
                     </Grid.Row>
                     <Grid.Row stretched>
                         <Segment>
-                            <div key="logo" className="logo-wrapper noselect">
+                            <Button className="lightOnly" icon="lightbulb" basic color="blue" floated="right" onClick={() => {
+                                this.props.app.theme = "dark";
+                                this.props.app.refresh();
+                            }} />
+                            <Button className="darkOnly" icon="lightbulb outline" floated="right" onClick={() => {
+                                this.props.app.theme = "light";
+                                this.props.app.refresh();
+                            }} />
+                            <div key="logo" className="logo-wrapper noselect" onClick={() => {
+                                this.props.app.screen = Screens.Home;
+                                this.props.app.refresh();
+                            }}>
                                 <div className="logo-container">
                                     <span className="logo-1">Dean </span>
                                     <span className="logo-2">Rutter</span>
@@ -45,15 +56,11 @@ export class Screen<P extends IScreenProperties, S extends IScreenState> extends
                             <div className="page-contents">
                                 { elements }
                             </div>
-                            <Step.Group>
-                                { this.renderStep("Past", "Past experiences & work", "arrow alternate circle left outline", Screens.Past) }
-                                { this.renderStep("Present", "Present occupation", "arrow alternate circle down outline", Screens.Present) }
-                                { this.renderStep("Future", "Future ambitions & goals", "arrow alternate circle right outline", Screens.Future) }
-                            </Step.Group>
-                            <br/>
-                            <Step.Group>
-                                { this.renderStep("Home", "Return to the home page", "home", Screens.Home) }
-                            </Step.Group>
+                            <Button.Group fluid>
+                                { this.renderButton("Experience", Screens.Past) }
+                                { this.renderButton("Work", Screens.Present) }
+                                { this.renderButton("Ambitions", Screens.Future) }
+                            </Button.Group>
                         </Segment>
                     </Grid.Row>
                 </Grid>
@@ -84,18 +91,16 @@ export class Screen<P extends IScreenProperties, S extends IScreenState> extends
         });
     }
 
-    private renderStep(label: string, description: string, icon: string, screen: Screens): JSX.Element {
+    private renderButton(label: string, screen: Screens): JSX.Element {
         return (
-            <Step
-                active={this.props.app.screen === screen}
-                icon={icon}
-                link
+            <Button
+                color="blue"
+                basic={this.props.app.screen !== screen}
+                content={label}
                 onClick={() => {
                     this.props.app.screen = screen;
                     this.props.app.refresh();
                 }}
-                title={label}
-                description={description}
             />
         );
     }

@@ -20,6 +20,8 @@ export class FutureScreen extends Screen<IProperties, IState> {
     }
 
     public render(): JSX.Element {
-        return super.render();
+        return super.render(
+            
+        );
     }
 }
