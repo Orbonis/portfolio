@@ -24,6 +24,10 @@ body {
     background-color: var(--body-color);
 }
 
+.hidden {
+    display: none !important;
+}
+
 .ui.segment {
     background-color: var(--background-color);
 }
@@ -44,7 +48,6 @@ body {
 }
 
 .logo-wrapper {
-    cursor: pointer;
     border-radius: 5pt;
 
     .logo-container {
@@ -75,26 +78,8 @@ body {
     }
 }
 
-.logo-wrapper:hover {
-    background-color: #FCFCFC;
-}
-
-.logo-wrapper:active {
-    background-color: #F6F6F6;
-}
-
-.dark {
-    .logo-wrapper:hover {
-        background-color: #333436;
-    }
-    
-    .logo-wrapper:active {
-        background-color: #414244;
-    }
-}
-
 .page-contents {
-    padding: 0em 1em 2em 1em;
+    padding: 0em 1em 0em 1em;
     font-weight: 300;
     font-size: 1.2em;
     color: var(--core-text-color);
@@ -105,10 +90,18 @@ body {
     }
 }
 
+.page-contents.top {
+    padding-bottom: 2em;
+}
+
+.page-contents.bottom {
+    padding-top: 2em;
+}
+
 .present {
     table {
         width: 80%;
-        margin: 0 auto 2em auto;
+        margin: 1em auto 1em auto;
         border: 1pt #CCC solid;
         border-radius: 5pt;
         border-collapse: collapse;

@@ -25,7 +25,7 @@ export class Screen<P extends IScreenProperties, S extends IScreenState> extends
                     <Loader />
                 </Dimmer>
                 <Grid centered padded>
-                    <Grid.Row stretched>
+                    <Grid.Row stretched className={(this.state.message.show) ? "" : "hidden"}>
                         <Message
                             hidden={!this.state.message.show}
                             error={this.state.message?.error}
@@ -43,24 +43,31 @@ export class Screen<P extends IScreenProperties, S extends IScreenState> extends
                                 this.props.app.theme = "light";
                                 this.props.app.refresh();
                             }} />
-                            <div key="logo" className="logo-wrapper noselect" onClick={() => {
-                                this.props.app.screen = Screens.Home;
-                                this.props.app.refresh();
-                            }}>
+                            <div key="logo" className="logo-wrapper noselect">
                                 <div className="logo-container">
                                     <span className="logo-1">Dean </span>
                                     <span className="logo-2">Rutter</span>
                                     <span className="logo-sub">Full Stack Software Engineer & DevOps Engineer</span>
                                 </div>
                             </div>
-                            <div className="page-contents">
-                                { elements }
+                            <div className="page-contents top">
+                                <p key="intro">
+                                    I am a professional software engineer, with extensive experience within the gambling industry,
+                                    utilising my skills to build and maintain games frameworks, as well as creating various tools 
+                                    for streamlining development, devops and client collaboration.
+                                </p>
+                                <p key="more">
+                                    For more specific information on my experience, please see the options below.
+                                </p>
                             </div>
                             <Button.Group fluid>
                                 { this.renderButton("Experience", Screens.Past) }
                                 { this.renderButton("Work", Screens.Present) }
                                 { this.renderButton("Ambitions", Screens.Future) }
                             </Button.Group>
+                            <div className={"page-contents bottom" + ((elements && elements.length > 0) ? "" : " hidden")}>
+                                { elements }
+                            </div>
                         </Segment>
                     </Grid.Row>
                 </Grid>
