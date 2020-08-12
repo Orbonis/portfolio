@@ -69,7 +69,7 @@ export class PastScreen extends Screen<IProperties, IState> {
             <table key="knowledge">
                 <thead>
                     <tr>
-                        <th colSpan={2}>Skills/Knowledge</th>
+                        <th colSpan={2}>Existing Knowledge</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -94,7 +94,8 @@ export class PastScreen extends Screen<IProperties, IState> {
                         <td>AWS</td>
                     </tr>
                 </tbody>
-            </table>
+            </table>,
+            <br key="break" />
         );
     }
 }

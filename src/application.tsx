@@ -28,7 +28,7 @@ export class Application extends React.Component<{}, IAppState> {
         const theme: string | null = localStorage.getItem("orbonis_theme");
 
         this.state = {
-            screen: params["page"] as Screens,
+            screen: ("page" in params) ? params["page"] as Screens : Screens.Home,
             params,
             theme: (theme) ? theme as "light" | "dark" : "dark",
             refresh: () => this.setState(this.state)
@@ -43,6 +43,7 @@ export class Application extends React.Component<{}, IAppState> {
 
     public render(): JSX.Element {
         switch (this.state.screen) {
+            default:
             case Screens.Home:
                 return <HomeScreen app={this.state} />;
             case Screens.Past:
@@ -51,9 +52,6 @@ export class Application extends React.Component<{}, IAppState> {
                 return <PresentScreen app={this.state} />;
             case Screens.Future:
                 return <FutureScreen app={this.state} />;
-            default:
-                this.setState({ screen: Screens.Home });
-                return <div></div>;
         }
     }
 
