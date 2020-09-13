@@ -33,7 +33,7 @@ export class PresentScreen extends Screen<IProperties, IState> {
                 "Role": "Senior Developer"
             }} />,
             <p key="duties">
-                My work involves the use of <b>Typescript</b>, <b>NodeJS</b>, <b>PIXI</b>, <b>AWS</b> and many associated libraries.<br/>
+                My work involves the use of <b>Typescript</b>, <b>NodeJS</b>, <b>PIXI</b>, <b>AWS</b>, <b>React</b> and many associated libraries.<br/>
                 A typical day consists of continued development on games, including working on 
                 improvements and fixes within a core games framework. Code must be written to be modular, so that 
                 code can be used across games, clients or globally within the company, depending on the feature.
