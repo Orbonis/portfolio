@@ -202,3 +202,31 @@ body {
         display: none;
     }
 }
+
+.game-panel {
+    margin: 30pt 0 10pt 0;
+
+    h1 {
+        color: #CCC;
+    }
+
+    iframe {
+        width: 600pt;
+        height: 600pt;
+        border: 1pt solid #222;
+    }
+
+    a {
+        display: block;
+        font-size: 20pt;
+        padding: 10pt;
+    }
+}
+
+.light {
+    .game-panel {
+        h1 {
+            color: #222;
+        }
+    }
+}

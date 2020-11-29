@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, Segment, Dimmer, Loader, Message, Grid, Button } from "semantic-ui-react";
+import { Container, Segment, Dimmer, Loader, Message, Grid, Button, Divider } from "semantic-ui-react";
 import { IAppState, Screens } from "src/application";
 
 export interface IScreenProperties {
@@ -67,6 +67,21 @@ export class Screen<P extends IScreenProperties, S extends IScreenState> extends
                             </Button.Group>
                             <div className={"page-contents bottom" + ((elements && elements.length > 0) ? "" : " hidden")}>
                                 { elements }
+                            </div>
+                            <div className="game-panel">
+                                <Button content="Play Tetris" color="blue" basic={!this.props.app.showTetris} fluid
+                                    onClick={() => {
+                                        this.props.app.showTetris = !this.props.app.showTetris;
+                                        this.props.app.refresh();
+                                    }} />
+                                <span style={{ display: (this.props.app.showTetris) ? "block" : "none" }}>
+                                    <br/>
+                                    <h1>Tetris</h1>
+                                    <iframe src="/tetris/index.html" />
+                                    <a href="https://bitbucket.org/orbonis-games/tetris/">
+                                        Bitbucket Repository
+                                    </a>
+                                </span>
                             </div>
                         </Segment>
                     </Grid.Row>

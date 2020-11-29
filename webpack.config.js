@@ -13,7 +13,7 @@ const data = {
     devtool: "source-map",
     devServer: {
         contentBase: path.join(__dirname, "build"),
-        port: 8080
+        port: 8008
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js"],
@@ -63,6 +63,11 @@ const data = {
     plugins: [
         new HTMLWebpackPlugin({
             title: "Dean Rutter"
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: "tetris", to: "tetris" }
+            ]
         })
     ]
 };

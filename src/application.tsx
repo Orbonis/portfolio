@@ -17,6 +17,7 @@ export interface IAppState {
     params: { [key: string]: string };
     refresh: Function;
     theme: "dark" | "light";
+    showTetris: boolean;
 }
 
 export class Application extends React.Component<{}, IAppState> {
@@ -31,7 +32,8 @@ export class Application extends React.Component<{}, IAppState> {
             screen: ("page" in params) ? params["page"] as Screens : Screens.Home,
             params,
             theme: (theme) ? theme as "light" | "dark" : "dark",
-            refresh: () => this.setState(this.state)
+            refresh: () => this.setState(this.state),
+            showTetris: false
         };
 
         this.updatePage();
