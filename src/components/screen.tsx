@@ -2,6 +2,7 @@ import React from "react";
 
 import { Container, Segment, Dimmer, Loader, Message, Grid, Button, Divider } from "semantic-ui-react";
 import { IAppState, Screens } from "src/application";
+import { FramePopup } from "./frame-popup";
 
 export interface IScreenProperties {
     app: IAppState;
@@ -15,6 +16,7 @@ export interface IScreenState {
         content?: string;
         timer?: number;
     };
+    frameSrc?: string;
 }
 
 export class Screen<P extends IScreenProperties, S extends IScreenState> extends React.Component<P, S> {
@@ -69,11 +71,14 @@ export class Screen<P extends IScreenProperties, S extends IScreenState> extends
                                 { elements }
                             </div>
                             <div className="game-panel">
-                                <Button as="a" href="/tetris/" target="_blank" content="Play Tetris" color="blue" basic fluid />
+                                <Button id="tetris-button" content="Play Tetris" color="blue" basic fluid onClick={() => {
+                                    this.setState({ frameSrc: "/tetris/" });
+                                }} />
                             </div>
                         </Segment>
                     </Grid.Row>
                 </Grid>
+                <FramePopup src={this.state.frameSrc} onClose={() => this.setState({ frameSrc: undefined })} />
             </Container>
         );
     }
