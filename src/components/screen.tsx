@@ -69,19 +69,7 @@ export class Screen<P extends IScreenProperties, S extends IScreenState> extends
                                 { elements }
                             </div>
                             <div className="game-panel">
-                                <Button content="Play Tetris" color="blue" basic={!this.props.app.showTetris} fluid
-                                    onClick={() => {
-                                        this.props.app.showTetris = !this.props.app.showTetris;
-                                        this.props.app.refresh();
-                                    }} />
-                                <span style={{ display: (this.props.app.showTetris) ? "block" : "none" }}>
-                                    <br/>
-                                    <h1>Tetris</h1>
-                                    <iframe src="/tetris/index.html" />
-                                    <a href="https://bitbucket.org/orbonis-games/tetris/">
-                                        Bitbucket Repository
-                                    </a>
-                                </span>
+                                <Button as="a" href="/tetris/" target="_blank" content="Play Tetris" color="blue" basic fluid />
                             </div>
                         </Segment>
                     </Grid.Row>
