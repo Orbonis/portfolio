@@ -56,12 +56,6 @@ export class Application extends React.Component<{}, IAppState> {
     }
 
     private updatePage(): void {
-        if (!this.state.screen || this.state.screen === Screens.Home) {
-            window.history.pushState("object or string", "Dean Rutter", `/`);
-        } else {
-            window.history.pushState("object or string", "Dean Rutter", `/?page=${this.state.screen}`);
-        }
-
         for (const key in Screens) {
             const screen: Screens = (Screens as any)[key] as Screens;
             document.body.classList.toggle(`${screen}`, this.state.screen === screen);
