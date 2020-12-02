@@ -234,7 +234,7 @@ body {
 }
 
 .overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -243,9 +243,10 @@ body {
 
     .segment {
         margin: auto !important;
-        margin-top: calc(50vh - 315pt) !important;
+        margin-top: 15pt !important;
         width: 600pt;
-        height: 630pt;
+        max-height: 630pt;
+        height: calc(100% - 30pt);
         padding: 0;
 
         button {
