@@ -71,8 +71,11 @@ export class Screen<P extends IScreenProperties, S extends IScreenState> extends
                                 { elements }
                             </div>
                             <div className="game-panel">
-                                <Button id="tetris-button" content="Play Tetris" color="blue" basic fluid onClick={() => {
-                                    this.setState({ frameSrc: "/tetris/" });
+                                <Button id="tetris-button" className="game-button" content="Play Tetris" color="blue" basic fluid onClick={() => {
+                                    this.setState({ frameSrc: "/games/tetris/" });
+                                }} />
+                                <Button id="invaders-button" className="game-button" content="Play Space Invaders" color="blue" basic fluid onClick={() => {
+                                    this.setState({ frameSrc: "/games/invaders/" });
                                 }} />
                             </div>
                         </Segment>

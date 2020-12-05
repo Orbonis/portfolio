@@ -66,7 +66,7 @@ const data = {
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: "tetris", to: "tetris" }
+                { from: "games", to: "games" }
             ]
         })
     ]

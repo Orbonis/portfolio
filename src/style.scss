@@ -266,7 +266,7 @@ body {
             width: 100%;
             height: 20pt;
             text-align: center;
-            color: #CCC;
+            color: var(--core-text-color);
         }
 
         iframe {
@@ -279,8 +279,12 @@ body {
     }
 }
 
+.game-button {
+    margin-bottom: 10pt !important;
+}
+
 .mobile {
-    #tetris-button {
+    .game-button {
         display: none;
     }
 }
