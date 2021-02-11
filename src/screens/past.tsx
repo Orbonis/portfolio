@@ -66,7 +66,7 @@ export class PastScreen extends Screen<IProperties, IState> {
                     <tr>
                         <td>Epic Industries</td>
                         <td>Senior Developer</td>
-                        <td>1 Year</td>
+                        <td>2 Year</td>
                         <td className="desktopOnly"><Popup trigger={<Icon name="info circle"/>} content="Framework development, client portal & tools and games development." position="left center" /></td>
                     </tr>
                 </tbody>
