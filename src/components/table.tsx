@@ -22,7 +22,7 @@ export class TableComponent extends React.Component<IProperties, {}> {
         }
 
         return [
-            <table key="table-desktop" className={(this.props.type === "platform") ? "desktopOnly" : "landscapeOnly"}>
+            <table key="table-desktop" className={(this.props.type === "platform") ? "desktop-only" : "landscape-only"}>
                 <thead>
                     <tr>
                         { headers }
@@ -34,7 +34,7 @@ export class TableComponent extends React.Component<IProperties, {}> {
                     </tr>
                 </tbody>
             </table>,
-            <table key="table-mobile" className={(this.props.type === "platform") ? "mobileOnly" : "portraitOnly"}>
+            <table key="table-mobile" className={(this.props.type === "platform") ? "mobile-only" : "portrait-only"}>
                 <tbody>
                     { combined }
                 </tbody>
