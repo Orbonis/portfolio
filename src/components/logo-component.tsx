@@ -71,7 +71,7 @@ export class LogoComponent extends React.Component<IProperties, IState> {
 
     public render(): JSX.Element {
         return (
-            <canvas id="logo-canvas" className="logo-canvas" width={this.canvas.width} height={this.canvas.height}></canvas>
+            <canvas id="logo-canvas" className="logo-canvas" width={this.canvas.width} height={this.canvas.height} title="This serves no purpose and has no meaning. I was bored."></canvas>
         );
     }
 
