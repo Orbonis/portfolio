@@ -15,7 +15,7 @@ interface IProperties {
 }
 
 interface IState {
-    game: Game | null
+    game: Game | null;
 }
 
 export class GamesPage extends React.Component<IProperties, IState> {
@@ -39,9 +39,10 @@ export class GamesPage extends React.Component<IProperties, IState> {
                         </div>
                     </div>
                     <div className={`game ${this.state.game}`}>
-                        <iframe className="desktop-only" src={data.url} />
+                        <iframe id="game-frame" className="desktop-only" src={data.url} />
                         <div className="mobile-only">Sorry! Games are only available on Desktop at the moment. But you can still get a link to the code below.</div>
                         <a href={data.repo} target="_blank">{this.state.game} code</a>
+                        <br />
                     </div>
                 </div>
             );
