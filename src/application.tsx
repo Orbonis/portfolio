@@ -54,7 +54,7 @@ export class Application extends React.Component<{}, IAppState> {
         switch (this.state.page) {
             case Page.Home:
             default:
-                return <HomePage />;
+                return <HomePage theme={this.state.theme} />;
             case Page.Games:
                 return <GamesPage />;
             case Page.Experience:

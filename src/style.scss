@@ -27,8 +27,17 @@
 }
 
 body {
-    background-image: radial-gradient(closest-side, var(--background-color), var(--background-secondary-color));
     padding: 1em;
+}
+
+.background {
+    background-image: radial-gradient(closest-side, var(--background-color), var(--background-secondary-color));
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1000;
 }
 
 .header {
@@ -120,6 +129,7 @@ body {
         margin: 0;
         height: 100%;
         width: 100%;
+        display: none;
 
         img {
             position: absolute;
@@ -310,11 +320,25 @@ table.interactive {
     }
 }
 
+.logo-canvas {
+    position: relative;
+    width: auto;
+    height: 250pt;
+    max-height: 60%;
+    background-color: transparent;
+}
+
 @media only screen and (max-width: 600px) {
     .header {
         .menu {
             flex-direction: column;
         }
+    }
+}
+
+@media only screen and (max-height: 600px) {
+    .logo-canvas {
+        display: none;
     }
 }
 

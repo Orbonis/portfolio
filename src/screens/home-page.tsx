@@ -1,7 +1,8 @@
 import React from "react";
+import { LogoComponent } from "src/components/logo-component";
 
 interface IProperties {
-
+    theme: string;
 }
 
 interface IState {
@@ -31,6 +32,7 @@ export class HomePage extends React.Component<IProperties, IState> {
                     utilising my skills to build and maintain games frameworks, as well as creating various tools for 
                     streamlining development, devops and client collaboration.
                 </div>
+                <LogoComponent theme={this.props.theme} />
             </div>
         )
     }

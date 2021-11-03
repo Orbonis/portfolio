@@ -18,6 +18,7 @@ export class PageComponent extends React.Component<IProperties, IState> {
     public render(): JSX.Element {
         return (
             <span>
+                <div className="background"></div>
                 <HeaderComponent
                     page={this.props.page}
                     focusAlias={location.href.includes("orbonis")}
