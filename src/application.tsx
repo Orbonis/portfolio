@@ -17,6 +17,7 @@ export interface IAppState {
     refresh: Function;
     theme: "dark" | "light";
     page: Page;
+    previousPage: Page;
 }
 
 export class Application extends React.Component<{}, IAppState> {
@@ -32,7 +33,8 @@ export class Application extends React.Component<{}, IAppState> {
             params,
             theme,
             refresh: () => this.setState(this.state),
-            page
+            page,
+            previousPage: page
         };
 
         this.updatePage();
@@ -44,7 +46,7 @@ export class Application extends React.Component<{}, IAppState> {
 
     public render(): JSX.Element {
         return (
-            <PageComponent page={this.state.page} onMenuClick={(page: Page) => this.setState({ page })} onThemeClick={() => this.toggleTheme()}>
+            <PageComponent page={this.state.page} onMenuClick={(page: Page) => this.setState({ previousPage: this.state.page, page })} onThemeClick={() => this.toggleTheme()}>
                 { this.page()  }
             </PageComponent>
         );
@@ -61,7 +63,7 @@ export class Application extends React.Component<{}, IAppState> {
                 return <ExperiencePage />;
             case Page.Contact:
                 this.openLink("https://www.linkedin.com/in/dean-rutter-359a853b/detail/contact-info/");
-                this.setState({ page: Page.Home });
+                this.setState({ page: this.state.previousPage });
                 return <ContactPage />;
         }
     }
