@@ -62,7 +62,7 @@ export class Application extends React.Component<{}, IAppState> {
             case Page.Experience:
                 return <ExperiencePage />;
             case Page.Contact:
-                this.openLink("https://www.linkedin.com/in/dean-rutter-359a853b/detail/contact-info/");
+                this.openLink("https://www.linkedin.com/in/dean-rutter-359a853b/overlay/contact-info/");
                 this.setState({ page: this.state.previousPage });
                 return <ContactPage />;
         }
