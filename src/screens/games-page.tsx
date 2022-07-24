@@ -2,7 +2,8 @@ import React from "react";
 
 enum Game {
     Tetris = "tetris",
-    Invaders = "invaders"
+    Invaders = "invaders",
+    Fatal = "fatal"
 }
 
 interface GameData {
@@ -53,6 +54,7 @@ export class GamesPage extends React.Component<IProperties, IState> {
                     <div className="game-buttons">
                         <button onClick={() => this.setState({ game: Game.Tetris })}>Tetris</button>
                         <button onClick={() => this.setState({ game: Game.Invaders })}>Invaders</button>
+			<button onClick={() => this.setState({ game: Game.Fatal })}>Fatal</button>
                     </div>
                 </div>
             );
@@ -71,6 +73,11 @@ export class GamesPage extends React.Component<IProperties, IState> {
                     repo: "https://bitbucket.org/orbonis-games/space-invaders/",
                     url: "/games/invaders/?hideRepo=true&prefix=tetris_"
                 };
+	    case Game.Fatal:
+		return {
+		    repo: "https://github.com/Orbonis/fatal-dungeon/",
+		    url: "/games/fatal/"
+		};
             default:
                 return null;
         }
