@@ -85,14 +85,6 @@ object-assign
  */
 
 /*!
- * @pixi/loaders - v5.3.12
- * Compiled Wed, 23 Mar 2022 18:34:28 UTC
- *
- * @pixi/loaders is licensed under the MIT License.
- * http://www.opensource.org/licenses/mit-license
- */
-
-/*!
  * @pixi/math - v5.3.12
  * Compiled Wed, 23 Mar 2022 18:34:28 UTC
  *
