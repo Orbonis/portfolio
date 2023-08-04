@@ -1,22 +1,23 @@
 import React from "react";
+import { PageComponent } from "./components/page-component";
+import { ContactPage } from "./screens/contact-page";
+import { ExperiencePage } from "./screens/experience-page";
+import { GamesPage } from "./screens/games-page";
+import { HomePage } from "./screens/home-page";
 
-import { HomeScreen } from "./screens/home";
-import { PastScreen } from "./screens/past";
-import { PresentScreen } from "./screens/present";
-import { FutureScreen } from "./screens/future";
-
-export enum Screens {
+export enum Page {
     Home = "home",
-    Past = "past",
-    Present = "present",
-    Future = "future"
-}
+    Games = "games",
+    Experience = "experience",
+    Contact = "contact"
+};
 
 export interface IAppState {
-    screen: Screens;
     params: { [key: string]: string };
     refresh: Function;
     theme: "dark" | "light";
+    page: Page;
+    previousPage: Page;
 }
 
 export class Application extends React.Component<{}, IAppState> {
@@ -25,13 +26,15 @@ export class Application extends React.Component<{}, IAppState> {
 
         const params = this.parseSearch();
 
-        const theme: string | null = localStorage.getItem("orbonis_theme");
+        const theme: "light" | "dark" | null = (("theme" in params) ? params.theme : localStorage.getItem("orbonis_theme")) as ("light" | "dark" | null) ?? "light";
+        const page: Page | null = localStorage.getItem("orbonis_page") as (Page | null) ?? Page.Home;
 
         this.state = {
-            screen: ("page" in params) ? params["page"] as Screens : Screens.Home,
             params,
-            theme: (theme) ? theme as "light" | "dark" : "dark",
-            refresh: () => this.setState(this.state)
+            theme,
+            refresh: () => this.setState(this.state),
+            page,
+            previousPage: page
         };
 
         this.updatePage();
@@ -42,29 +45,40 @@ export class Application extends React.Component<{}, IAppState> {
     }
 
     public render(): JSX.Element {
-        switch (this.state.screen) {
+        return (
+            <PageComponent page={this.state.page} onMenuClick={(page: Page) => this.setState({ previousPage: this.state.page, page })} onThemeClick={() => this.toggleTheme()}>
+                { this.page()  }
+            </PageComponent>
+        );
+    }
+
+    private page(): JSX.Element {
+        switch (this.state.page) {
+            case Page.Home:
             default:
-            case Screens.Home:
-                return <HomeScreen app={this.state} />;
-            case Screens.Past:
-                return <PastScreen app={this.state} />;
-            case Screens.Present:
-                return <PresentScreen app={this.state} />;
-            case Screens.Future:
-                return <FutureScreen app={this.state} />;
+                return <HomePage theme={this.state.theme} />;
+            case Page.Games:
+                return <GamesPage />;
+            case Page.Experience:
+                return <ExperiencePage />;
+            case Page.Contact:
+                this.openLink("https://www.linkedin.com/in/dean-rutter-359a853b/");
+                this.setState({ page: this.state.previousPage });
+                return <ContactPage />;
         }
     }
 
-    private updatePage(): void {
-        for (const key in Screens) {
-            const screen: Screens = (Screens as any)[key] as Screens;
-            document.body.classList.toggle(`${screen}`, this.state.screen === screen);
-        }
+    private toggleTheme(): void {
+        this.setState({ theme: this.state.theme === "light" ? "dark" : "light" });
+        this.updatePage();
+    }
 
+    private updatePage(): void {
         document.body.classList.toggle("light", this.state.theme === "light");
         document.body.classList.toggle("dark", this.state.theme === "dark");
 
         localStorage.setItem("orbonis_theme", this.state.theme);
+        localStorage.setItem("orbonis_page", this.state.page);
     }
 
     private parseSearch(): { [key: string]: string } {
@@ -75,5 +89,14 @@ export class Application extends React.Component<{}, IAppState> {
             params[data.shift() as string] = data.join("=");
         });
         return params;
+    }
+
+    private openLink(link: string): void {
+        const a = document.createElement("a");
+        a.href = link;
+        a.target = "_blank";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
     }
 }
