@@ -62,9 +62,9 @@ export class ExperiencePage extends React.Component<IProperties, IState> {
                                 <td>4 Years</td>
                             </tr>
                             <tr>
-                                <td>Epic Industries</td>
+                                <td>Epic Industries/G Games</td>
                                 <td>Senior Developer</td>
-                                <td>2 Years</td>
+                                <td>4 Years</td>
                             </tr>
                         </tbody>
                     </table>
@@ -103,7 +103,7 @@ export class ExperiencePage extends React.Component<IProperties, IState> {
                     I am currently working at a gambling slots developer called Epic Industries where I help to maintain their framework, develop various casino games and build tools that allow for better development flow and smoother devops.<br/>
 
                     <TableComponent type="orientation" data={{
-                        "Company": "Epic Industries",
+                        "Company": "G Games",
                         "Role": "Senior Developer"
                     }} />
                     My work involves the use of Typescript, NodeJS, PIXI, AWS, React and many associated libraries.<br/>
