@@ -13,7 +13,7 @@ const data = {
     devtool: "source-map",
     devServer: {
         contentBase: path.join(__dirname, "build"),
-        port: 8008
+        port: 8080
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js"],
