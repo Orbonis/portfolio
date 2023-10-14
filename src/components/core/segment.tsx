@@ -1,4 +1,4 @@
-import React, { HTMLProps } from "react";
+import React, { HTMLProps, ReactNode } from "react";
 
 interface IProperties extends HTMLProps<HTMLDivElement> {
 
@@ -15,7 +15,7 @@ export class Segment extends React.Component<IProperties, IState> {
         this.state = {};
     }
 
-    public render(): JSX.Element {
+    public render(): ReactNode {
         return (
             <div className="segment" style={this.props.style}>
                 { this.props.children }

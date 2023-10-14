@@ -58,7 +58,7 @@ const data = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-            title: "Dean Rutter"
+            template: "src/index-template.html"
         }),
         new CopyWebpackPlugin({
             patterns: [

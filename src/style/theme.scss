@@ -1,3 +1,58 @@
 body {
-    background-color: #EEF;
+    color: #CCC;
+    background-color: #646;
+}
+
+.header {
+    padding: 10px 10px 0 10px;
+
+    h1 {
+        margin: 0;
+        display: block;
+    }
+    
+    h2 {
+        margin: 0;
+        display: block;
+        font-size: 1em;
+    }
+
+    .logo {
+        width: 80px;
+        max-width: 10vw;
+    }
+}
+
+.main { 
+    margin: 0 10px 0 10px;
+    padding: 0 10px 0 10px;
+    overflow-y: auto;
+
+    h1 {
+        margin: 10px 0 20px 0;
+        padding: 0 10px 0 10px;
+        font-size: 1.5em;
+    }
+
+    p {
+        margin: 10px 0 20px 0;
+        padding: 0 10px 0 10px;
+    }
+
+    .profile-pic {
+        height: 120px;
+        border: 1px #999 solid;
+        border-radius: 5px;
+        background-image: linear-gradient(#DDE, #FFF);
+        margin: 0 20px 0 10px;
+    }
+}
+
+.background.top {
+    background-color: #222;
+}
+
+.background.bottom {
+    background-image: linear-gradient(#222, #446, #646);
+    height: 1000px;
 }
