@@ -38,7 +38,7 @@ export class Header extends React.Component<HTMLProps<HTMLDivElement>, {}> {
                         </Grid.Row>
                         <Grid.Row fitted>
                             <Grid.Content fitted>
-                                <Link to="/education">Education</Link>
+                                <Link to="/history">History</Link>
                             </Grid.Content>
                         </Grid.Row>
                         <Grid.Row fitted>
@@ -54,6 +54,7 @@ export class Header extends React.Component<HTMLProps<HTMLDivElement>, {}> {
                     </Grid.Column>
                 </Grid.Row>
             </Grid>,
+            <div className="header-overlap" />,
             <Outlet key="header-outlet" />
         ];
     }

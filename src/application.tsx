@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./components/header";
 import { Home } from "./pages/home";
 import { Body } from "./components/body";
+import { History } from "./pages/history";
+import { Qualifications } from "./pages/qualifications";
+import { Games } from "./pages/games";
 
 interface IProperties {
 
@@ -27,9 +30,9 @@ export class Application extends React.Component<IProperties, IState> {
                 <Routes>
                     <Route path="/" element={<Header />}>
                         <Route index element={<Home />} />
-                        <Route path="/education" element={<Body />} />
-                        <Route path="/qualifications" element={<Body />} />
-                        <Route path="/games" element={<Body />} />
+                        <Route path="/history" element={<History />} />
+                        <Route path="/qualifications" element={<Qualifications />} />
+                        <Route path="/games" element={<Games />} />
                     </Route>
                 </Routes>
             </BrowserRouter>
