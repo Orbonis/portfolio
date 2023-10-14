@@ -31,7 +31,7 @@ export class Timeline extends React.Component<IProperties, IState> {
     public render(): ReactNode {
         return (
             <div className="timeline">
-                { this.props.data.map((x, i) => this.renderRow(x, i)) }
+                { this.props.data.reverse().map((x, i) => this.renderRow(x, i)) }
             </div>
         );
     }
@@ -75,12 +75,12 @@ export class Timeline extends React.Component<IProperties, IState> {
                     </div>
                     <div className="dates">
                         <div>
-                            <div>from</div>
-                            <div>{ data.dates.start }</div>
-                        </div>
-                        <div>
                             <div>until</div>
                             <div>{ data.dates.end ?? "Present" }</div>
+                        </div>
+                        <div>
+                            <div>from</div>
+                            <div>{ data.dates.start }</div>
                         </div>
                     </div>
                 </div>
