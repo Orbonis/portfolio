@@ -14,6 +14,10 @@
             width: calc(100% - 160px);
             border-left: 1px #222 dashed;
             font-size: 0.9em;
+
+            br {
+                padding: 5px;
+            }
         }
 
         .marker {

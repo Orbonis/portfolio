@@ -47,6 +47,10 @@ export class Timeline extends React.Component<IProperties, IState> {
         const detailsStyle: React.CSSProperties = {};
         detailsStyle.display = (this.state.expandState[index]) ? "block" : "none";
 
+        const detailsHTML: string = (
+            (typeof(data.details) === "string") ? [ data.details ] : data.details ?? [ "" ]
+        ).map((x) => `<p>${x}</p>`).join("");
+
         return [
             <div className="entry">
                 <div className="marker">
@@ -71,7 +75,7 @@ export class Timeline extends React.Component<IProperties, IState> {
                 </div>
             </div>,
             <div className="entry details" style={ detailsStyle }>
-                <p dangerouslySetInnerHTML={{ __html: (typeof(data.details) === "string") ? data.details : data.details?.join("<br/>") ?? "" }}></p>
+                <p dangerouslySetInnerHTML={{ __html: detailsHTML }}></p>
             </div>
         ];
     }
