@@ -6,12 +6,14 @@ interface IGridProperties extends React.HTMLProps<HTMLDivElement> {
 
 interface IRowProperties extends React.HTMLProps<HTMLDivElement>  {
     fitted?: boolean;
+    stretch?: boolean;
     horizontal?: "start" | "center" | "end";
     vertical?: "top" | "middle" | "bottom";
 }
 
 interface IColumnProperties extends React.HTMLProps<HTMLDivElement>  {
     fitted?: boolean;
+    width?: string | number;
     horizontal?: "start" | "center" | "end";
     vertical?: "top" | "middle" | "bottom";
 }
@@ -36,6 +38,9 @@ class Row extends React.Component<IRowProperties, {}> {
         if (this.props.fitted) {
             classes.push("fitted");
         }
+        if (this.props.stretch) {
+            classes.push("stretch");
+        }
         classes.push(this.props.horizontal ?? "start");
         classes.push(this.props.vertical ?? "top");
         classes.push(...(this.props.className?.split(" ") ?? []));
@@ -57,7 +62,7 @@ class Column extends React.Component<IColumnProperties, {}> {
 
     public render(): JSX.Element {
         const classes: string[] = [ "column" ];
-        if (this.props.fitted) {
+        if (this.props.fitted || this.props.width !== undefined) {
             classes.push("fitted");
         }
         classes.push(this.props.horizontal ?? "start");
@@ -65,7 +70,7 @@ class Column extends React.Component<IColumnProperties, {}> {
         classes.push(...(this.props.className?.split(" ") ?? []));
 
         return (
-            <div className={ classes.join(" ") } style={ this.props.style }>
+            <div className={ classes.join(" ") } style={{ minWidth: this.props.width, ...this.props.style }}>
                 { this.props.children }
             </div>
         );

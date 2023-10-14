@@ -57,6 +57,25 @@ body {
         display: none;
     }
 
+    .grid.contacts {
+        .grid-header {
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        .content {
+            padding: 5px 15px;
+
+            a {
+                color: #222;
+            }
+
+            a:hover {
+                color: #555;
+            }
+        }
+    }
+
     .grid {
         color: #444;
 
@@ -64,6 +83,22 @@ body {
             background-color: #444;
             color: #EEE;
             font-weight: bold;
+
+            &.column {
+                background-image: linear-gradient(90deg, #446, #222);
+            }
+
+            &.row {
+                background-image: linear-gradient(#446, #222);
+            }
+
+            .row {
+                outline: none !important;
+            }
+
+            .column {
+                outline: none !important;
+            }
         }
     }
 

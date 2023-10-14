@@ -37,6 +37,10 @@
     .row.fitted {
         flex: 0 0 auto;
     }
+
+    .row.stretch {
+        width: 100%;
+    }
     
     .row + .row {
         margin-top: 1px;
