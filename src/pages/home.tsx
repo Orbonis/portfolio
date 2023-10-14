@@ -3,8 +3,9 @@ import { Body } from "src/components/body";
 import { Grid } from "src/components/core/grid";
 import { Segment } from "src/components/core/segment";
 import { Logo } from "src/components/logo";
+import { Page } from "./core/page";
 
-export class Home extends React.Component<HTMLProps<HTMLDivElement>, {}> {
+export class Home extends Page {
     constructor(props: HTMLProps<HTMLDivElement>) {
         super(props);
 
