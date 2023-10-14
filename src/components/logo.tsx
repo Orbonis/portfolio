@@ -42,7 +42,8 @@ export class Logo extends React.Component<IProperties, {}> {
         "bitbucket",
         "c#",
         "java",
-        "unity"
+        "unity",
+        "docker"
     ];
     protected textData: ITextData[] = [];
     protected canvasID: string;

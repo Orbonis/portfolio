@@ -46,15 +46,10 @@ export class Header extends React.Component<HTMLProps<HTMLDivElement>, {}> {
                                 <Link to="/projects">Projects</Link>
                             </Grid.Content>
                         </Grid.Row>
-                        <Grid.Row fitted>
-                            <Grid.Content fitted>
-                                <Link to="/contact">Contact</Link>
-                            </Grid.Content>
-                        </Grid.Row>
                     </Grid.Column>
                 </Grid.Row>
             </Grid>,
-            <div className="header-overlap" />,
+            <div key="header-overlap" className="header-overlap" />,
             <Outlet key="header-outlet" />
         ];
     }

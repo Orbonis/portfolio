@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./components/header";
 import { Home } from "./pages/home";
 import { History } from "./pages/history";
-import { Contact } from "./pages/contact";
 import { Projects } from "./pages/projects";
 
 interface IProperties {
@@ -31,7 +30,6 @@ export class Application extends React.Component<IProperties, IState> {
                         <Route index element={<Home />} />
                         <Route path="/history" element={<History />} />
                         <Route path="/projects" element={<Projects />} />
-                        <Route path="/contact" element={<Contact />} />
                         <Route path="*" element={<Home />} />
                     </Route>
                 </Routes>

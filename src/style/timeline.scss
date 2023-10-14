@@ -8,10 +8,14 @@
         display: flex;
         flex-direction: row;
 
+        &.selectable:hover {
+            cursor: pointer;
+        }
+
         &.details {
             margin-left: 10px;
-            padding-left: 40px;
-            width: calc(100% - 150px);
+            padding-left: 60px;
+            width: calc(100% - 170px);
             border-left: 1px #222 dashed;
             font-size: 0.9em;
 
@@ -51,16 +55,12 @@
                 content: "▼";
             }
 
-            &:hover {
-                cursor: pointer;
-            }
-
             &.open {
                 transform: rotateZ(0deg);
             }
 
             &.hidden {
-                display: none;
+                color: rgba(0, 0, 0, 0);
             }
         }
 

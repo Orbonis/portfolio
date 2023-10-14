@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import { highlightWords } from "src/utils/focus";
 
 export interface TimelineData {
     name: string;
@@ -36,6 +37,11 @@ export class Timeline extends React.Component<IProperties, IState> {
     }
 
     private renderRow(data: TimelineData, index: number): ReactNode {
+        const entryClasses = [ "entry" ];
+        if (data.details !== undefined) {
+            entryClasses.push("selectable");
+        }
+
         const expanderClasses = [ "expander" ];
         if (this.state.expandState[index]) {
             expanderClasses.push("open");
@@ -47,16 +53,21 @@ export class Timeline extends React.Component<IProperties, IState> {
         const detailsStyle: React.CSSProperties = {};
         detailsStyle.display = (this.state.expandState[index]) ? "block" : "none";
 
-        const detailsHTML: string = (
+        const detailsHTML: string = highlightWords((
             (typeof(data.details) === "string") ? [ data.details ] : data.details ?? [ "" ]
-        ).map((x) => `<p>${x}</p>`).join("");
+        ).map((x) => `<p>${x}</p>`).join(""));
+
+        let entryOnClick: React.MouseEventHandler<HTMLDivElement> | undefined;
+        if (data.details !== undefined) {
+            entryOnClick = () => this.toggleExpand(index);
+        }
 
         return [
-            <div className="entry">
+            <div key={`entry-${index}`} className={ entryClasses.join(" ") } onClick={entryOnClick}>
                 <div className="marker">
                     <div className="dot" />
                 </div>
-                <div className={ expanderClasses.join(" ") } onClick={() => this.toggleExpand(index)} />
+                <div className={ expanderClasses.join(" ") } />
                 <div className="contents">
                     <div className="details">
                         <h1>{ data.name }</h1>
@@ -74,15 +85,16 @@ export class Timeline extends React.Component<IProperties, IState> {
                     </div>
                 </div>
             </div>,
-            <div className="entry details" style={ detailsStyle }>
+            <div key={`entry-details-${index}`} className="entry details" style={ detailsStyle }>
                 <p dangerouslySetInnerHTML={{ __html: detailsHTML }}></p>
             </div>
         ];
     }
 
     private toggleExpand(index: number): void {
-        const expandState = this.state.expandState;
-        expandState[index] = !expandState[index];
+        const newState: boolean = !this.state.expandState[index];
+        const expandState = new Array(this.props.data.length).fill(false);
+        expandState[index] = newState;
         this.setState({ expandState });
     }
 }
