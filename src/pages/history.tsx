@@ -1,7 +1,7 @@
 import React, { HTMLProps, ReactNode } from "react";
 import { Body } from "src/components/body";
 import { Segment } from "src/components/core/segment";
-import { Timeline } from "src/components/timeline";
+import { Timeline } from "src/components/core/timeline";
 import { Page } from "./core/page";
 
 import historyJSON from "../data/history.json";

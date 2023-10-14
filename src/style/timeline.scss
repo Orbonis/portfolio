@@ -125,3 +125,20 @@
         }
     }
 }
+
+.portrait {
+    .timeline {
+        .entry {
+            &.details {
+                padding-left: 20px;
+                width: calc(100% - 50px);
+            }
+
+            .contents {
+                .details {
+                    padding: 10px 5px 10px 20px;
+                }
+            }
+        }
+    }
+}
