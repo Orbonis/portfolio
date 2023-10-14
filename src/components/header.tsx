@@ -1,20 +1,17 @@
-import React, { ReactNode } from "react";
+import React, { HTMLProps, ReactNode } from "react";
 import { Grid } from "./core/grid";
+import { Link, Outlet } from "react-router-dom";
 
-export interface IProperties {
-
-}
-
-export class Header extends React.Component<IProperties, {}> {
-    constructor(props: IProperties) {
+export class Header extends React.Component<HTMLProps<HTMLDivElement>, {}> {
+    constructor(props: HTMLProps<HTMLDivElement>) {
         super(props);
 
         this.state = {};
     }
 
     public render(): ReactNode {
-        return (
-            <Grid className="header">
+        return [
+            <Grid key="header-grid" className="header">
                 <Grid.Row>
                     <Grid.Column fitted vertical="middle">
                         <Grid.Content>
@@ -36,27 +33,28 @@ export class Header extends React.Component<IProperties, {}> {
                     <Grid.Column fitted horizontal="end" vertical="middle">
                         <Grid.Row fitted>
                             <Grid.Content fitted>
-                                <a href="/">Home</a>
+                                <Link to="/">Home</Link>
                             </Grid.Content>
                         </Grid.Row>
                         <Grid.Row fitted>
                             <Grid.Content fitted>
-                                <a href="/education.html">Education</a>
+                                <Link to="/education">Education</Link>
                             </Grid.Content>
                         </Grid.Row>
                         <Grid.Row fitted>
                             <Grid.Content fitted>
-                                <a href="/qualifications.html">Qualifications</a>
+                                <Link to="/qualifications">Qualifications</Link>
                             </Grid.Content>
                         </Grid.Row>
                         <Grid.Row fitted>
                             <Grid.Content fitted>
-                                <a href="/games.html">Games</a>
+                                <Link to="/games">Games</Link>
                             </Grid.Content>
                         </Grid.Row>
                     </Grid.Column>
                 </Grid.Row>
-            </Grid>
-        );
+            </Grid>,
+            <Outlet key="header-outlet" />
+        ];
     }
 }

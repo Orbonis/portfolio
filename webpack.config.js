@@ -8,7 +8,8 @@ const data = {
     entry: "./src/index.tsx",
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "index.js"
+        filename: "index.js",
+        publicPath: "/"
     },
     devtool: "source-map",
     resolve: {
@@ -17,6 +18,9 @@ const data = {
             path.resolve(__dirname, 'node_modules'),
             path.resolve(__dirname, compilerOptions.baseUrl),
         ],
+    },
+    devServer: {
+        historyApiFallback: true
     },
     module: {
         rules: [
