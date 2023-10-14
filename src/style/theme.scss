@@ -46,6 +46,26 @@ body {
         background-image: linear-gradient(#DDE, #FFF);
         margin: 0 20px 0 10px;
     }
+
+    .logo-row {
+        display: none;
+    }
+}
+
+.portrait {
+    .main {
+        .logo-column {
+            display: none;
+        }
+
+        .logo-row {
+            display: flex;
+
+            .content {
+                margin: 0 auto 0 auto;
+            }
+        }
+    }
 }
 
 .background.top {

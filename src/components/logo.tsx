@@ -45,17 +45,20 @@ export class Logo extends React.Component<IProperties, {}> {
         "unity"
     ];
     protected textData: ITextData[] = [];
+    protected canvasID: string;
 
     constructor(props: IProperties) {
         super(props);
 
         this.state = {};
+
+        this.canvasID = "logo-canvas-" + Math.floor(Math.random() * 1000);
     }
 
     public componentDidMount(): void {
         this.updateColour();
 
-        const canvas = document.getElementById("logo-canvas") as HTMLCanvasElement | null;
+        const canvas = document.getElementById(this.canvasID) as HTMLCanvasElement | null;
         if (canvas && !this.ctx) {
             this.setupCanvas(canvas);
         }
@@ -67,7 +70,7 @@ export class Logo extends React.Component<IProperties, {}> {
 
     public render(): JSX.Element {
         return (
-            <canvas id="logo-canvas" className="logo-canvas" width={this.canvas.width} height={this.canvas.height} title="This serves no purpose and has no meaning. I was bored."></canvas>
+            <canvas id={ this.canvasID } className="logo-canvas" width={this.canvas.width} height={this.canvas.height} title="This serves no purpose and has no meaning. I was bored."></canvas>
         );
     }
 

@@ -38,6 +38,7 @@ class Row extends React.Component<IRowProperties, {}> {
         }
         classes.push(this.props.horizontal ?? "start");
         classes.push(this.props.vertical ?? "top");
+        classes.push(...(this.props.className?.split(" ") ?? []));
 
         return (
             <div className={ classes.join(" ") } style={ this.props.style }>
@@ -61,6 +62,7 @@ class Column extends React.Component<IColumnProperties, {}> {
         }
         classes.push(this.props.horizontal ?? "start");
         classes.push(this.props.vertical ?? "top");
+        classes.push(...(this.props.className?.split(" ") ?? []));
 
         return (
             <div className={ classes.join(" ") } style={ this.props.style }>

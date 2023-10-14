@@ -36,7 +36,7 @@ export class Home extends React.Component<HTMLProps<HTMLDivElement>, {}> {
                 </Segment>
                 <Grid>
                     <Grid.Row>
-                        <Grid.Column fitted vertical="middle">
+                        <Grid.Column fitted vertical="middle" className="logo-column">
                             <Grid.Content vertical="middle">
                                 <Logo />
                             </Grid.Content>
@@ -56,6 +56,13 @@ export class Home extends React.Component<HTMLProps<HTMLDivElement>, {}> {
                                     efficient coding, and I'm eager to share that passion with future collaborators.
                                 </p>
                             </Segment>
+                        </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row className="logo-row" horizontal="center" vertical="middle">
+                        <Grid.Column vertical="middle">
+                            <Grid.Content horizontal="center" vertical="middle">
+                                <Logo />
+                            </Grid.Content>
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
