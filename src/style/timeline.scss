@@ -1,0 +1,91 @@
+.timeline {
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+
+    .entry {
+        display: flex;
+        flex-direction: row;
+
+        .marker {
+            border-left: 1px #222 solid;
+            padding-right: 20px;
+            margin-left: 10px;
+            height: 80px;
+            position: relative;
+
+            .dot {
+                height: 12px;
+                width: 12px;
+                background-image: linear-gradient(45deg, #CCF, #FFF);
+                border-radius: 50%;
+                border: 1px solid #222;
+                display: inline-block;
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &:first-child {
+            .contents {
+                border-top: none;
+            }
+        }
+
+        .contents {
+            display: flex;
+            flex-direction: row;
+            border-top: 1px solid #DDD;
+            flex-grow: 1;
+
+            .details {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                margin: auto 0;
+                padding-left: 20px;
+
+                h1 {
+                    margin: 0;
+                    padding: 0;
+                    font-size: 1.2em;
+                    font-weight: bold;
+                }
+        
+                p {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+    
+            .dates {
+                flex-grow: 0;
+                display: flex;
+                flex-direction: column;
+                font-size: 0.8em;
+                font-weight: bold;
+
+                div {
+                    display: flex;
+                    flex-direction: row;
+                    padding: 4px 0;
+
+                    &:last-child {
+                        margin-top: auto;
+                    }
+
+                    div {
+                        flex: 1 1 auto;
+                        padding: 0 5px;
+
+                        &:last-child {
+                            justify-content: flex-end;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

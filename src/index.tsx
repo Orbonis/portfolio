@@ -6,6 +6,7 @@ import { setupAutoAdjustBodyHeight } from "./utils/auto-sizing";
 
 import "src/style/root.scss";
 import "src/style/grid.scss";
+import "src/style/timeline.scss";
 import "src/style/misc.scss";
 import "src/style/theme.scss";
 

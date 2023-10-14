@@ -3,7 +3,7 @@ import { Body } from "src/components/body";
 import { Segment } from "src/components/core/segment";
 import { Page } from "./core/page";
 
-export class Games extends Page {
+export class Contact extends Page {
     constructor(props: HTMLProps<HTMLDivElement>) {
         super(props);
 
@@ -14,7 +14,7 @@ export class Games extends Page {
         return (
             <Body>
                 <Segment>
-
+                    
                 </Segment>
             </Body>
         );

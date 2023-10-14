@@ -43,12 +43,12 @@ export class Header extends React.Component<HTMLProps<HTMLDivElement>, {}> {
                         </Grid.Row>
                         <Grid.Row fitted>
                             <Grid.Content fitted>
-                                <Link to="/qualifications">Qualifications</Link>
+                                <Link to="/projects">Projects</Link>
                             </Grid.Content>
                         </Grid.Row>
                         <Grid.Row fitted>
                             <Grid.Content fitted>
-                                <Link to="/games">Games</Link>
+                                <Link to="/contact">Contact</Link>
                             </Grid.Content>
                         </Grid.Row>
                     </Grid.Column>

@@ -2,10 +2,9 @@ import React, { ReactNode } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./components/header";
 import { Home } from "./pages/home";
-import { Body } from "./components/body";
 import { History } from "./pages/history";
-import { Qualifications } from "./pages/qualifications";
-import { Games } from "./pages/games";
+import { Contact } from "./pages/contact";
+import { Projects } from "./pages/projects";
 
 interface IProperties {
 
@@ -31,8 +30,9 @@ export class Application extends React.Component<IProperties, IState> {
                     <Route path="/" element={<Header />}>
                         <Route index element={<Home />} />
                         <Route path="/history" element={<History />} />
-                        <Route path="/qualifications" element={<Qualifications />} />
-                        <Route path="/games" element={<Games />} />
+                        <Route path="/projects" element={<Projects />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route path="*" element={<Home />} />
                     </Route>
                 </Routes>
             </BrowserRouter>
