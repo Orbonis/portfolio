@@ -1,42 +1,37 @@
 {
-  "name": "portfolio",
-  "version": "1.0.0",
-  "description": "A website portfolio for diplaying my work and CV",
-  "main": "index.js",
-  "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.js",
-    "build": "webpack --config ./webpack.config.js --mode production"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@bitbucket.org/orbonis-games/portfolio.git"
-  },
-  "author": "Dean Rutter",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/orbonis-games/portfolio#readme",
-  "devDependencies": {
-    "@types/node": "^14.0.27",
-    "@types/react": "^16.9.44",
-    "@types/react-dom": "^16.9.8",
-    "sass": "^1.26.10",
-    "sass-loader": "^9.0.3",
-    "ts-loader": "^8.0.2",
-    "typescript": "^3.9.7",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
-  },
-  "dependencies": {
-    "@tweenjs/tween.js": "^18.6.4",
-    "copy-webpack-plugin": "^6.0.3",
-    "css-loader": "^4.2.1",
-    "file-loader": "^6.0.0",
-    "html-webpack-plugin": "^4.3.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^1.1.1",
-    "style-loader": "^1.2.1",
-    "url-loader": "^4.1.0",
-    "webpack-dev-server": "^3.11.0"
-  }
+    "name": "portfolio",
+    "version": "2.0.0",
+    "description": "A website portfolio for diplaying my work and CV",
+    "scripts": {
+        "start": "webpack serve --config ./webpack.config.js",
+        "build": "webpack --config ./webpack.config.js --mode production"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@gitlab.com:orbonis-dev/home-server/portfolio.git"
+    },
+    "author": "Dean Rutter",
+    "license": "ISC",
+    "homepage": "https://gitlab.com/orbonis-dev/home-server/portfolio#readme",
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@types/react": "^18.2.28",
+        "@types/react-dom": "^18.2.13",
+        "copy-webpack-plugin": "^11.0.0",
+        "css-loader": "^6.8.1",
+        "file-loader": "^6.2.0",
+        "html-webpack-plugin": "^5.5.3",
+        "sass": "^1.69.3",
+        "sass-loader": "^13.3.2",
+        "style-loader": "^3.3.3",
+        "ts-loader": "^9.5.0",
+        "typescript": "^5.2.2",
+        "url-loader": "^4.1.1",
+        "webpack": "^5.89.0",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^4.15.1"
+    }
 }

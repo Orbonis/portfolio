@@ -7,14 +7,10 @@ const data = {
     mode: "development",
     entry: "./src/index.tsx",
     output: {
-        path: path.resolve(__dirname, "build"),
+        path: path.resolve(__dirname, "dist"),
         filename: "index.js"
     },
     devtool: "source-map",
-    devServer: {
-        contentBase: path.join(__dirname, "build"),
-        port: 8080
-    },
     resolve: {
         extensions: [".ts", ".tsx", ".js"],
         modules: [
@@ -67,7 +63,8 @@ const data = {
         new CopyWebpackPlugin({
             patterns: [
                 { from: "games", to: "games" },
-                { from: "media", to: "media" }
+                { from: "media", to: "media" },
+                { from: "src/favicon.ico", to: "favicon.ico" }
             ]
         })
     ]
