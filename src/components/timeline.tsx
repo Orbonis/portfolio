@@ -3,6 +3,7 @@ import React, { ReactNode } from "react";
 export interface TimelineData {
     name: string;
     description: string;
+    details?: string | string[];
     dates: {
         start: string;
         end?: string;
@@ -13,27 +14,45 @@ interface IProperties {
     data: TimelineData[];
 }
 
-export class Timeline extends React.Component<IProperties, {}> {
+interface IState {
+    expandState: boolean[];
+}
+
+export class Timeline extends React.Component<IProperties, IState> {
     constructor(props: IProperties) {
         super(props);
 
-        this.state = {};
+        this.state = {
+            expandState: new Array(this.props.data.length).fill(false)
+        };
     }
 
     public render(): ReactNode {
         return (
             <div className="timeline">
-                { this.props.data.map((x) => this.renderRow(x)) }
+                { this.props.data.map((x, i) => this.renderRow(x, i)) }
             </div>
         );
     }
 
-    private renderRow(data: TimelineData): ReactNode {
-        return (
+    private renderRow(data: TimelineData, index: number): ReactNode {
+        const expanderClasses = [ "expander" ];
+        if (this.state.expandState[index]) {
+            expanderClasses.push("open");
+        }
+        if (data.details === undefined) {
+            expanderClasses.push("hidden");
+        }
+
+        const detailsStyle: React.CSSProperties = {};
+        detailsStyle.display = (this.state.expandState[index]) ? "block" : "none";
+
+        return [
             <div className="entry">
                 <div className="marker">
                     <div className="dot" />
                 </div>
+                <div className={ expanderClasses.join(" ") } onClick={() => this.toggleExpand(index)} />
                 <div className="contents">
                     <div className="details">
                         <h1>{ data.name }</h1>
@@ -50,7 +69,16 @@ export class Timeline extends React.Component<IProperties, {}> {
                         </div>
                     </div>
                 </div>
+            </div>,
+            <div className="entry details" style={ detailsStyle }>
+                <p dangerouslySetInnerHTML={{ __html: (typeof(data.details) === "string") ? data.details : data.details?.join("<br/>") ?? "" }}></p>
             </div>
-        )
+        ];
+    }
+
+    private toggleExpand(index: number): void {
+        const expandState = this.state.expandState;
+        expandState[index] = !expandState[index];
+        this.setState({ expandState });
     }
 }

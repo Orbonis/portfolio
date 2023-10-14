@@ -2,6 +2,7 @@
     {
         "name": "Mid Cheshire College",
         "description": "BTEC Multimedia",
+        "details": "This degree includes various multimedia implementations including graphic design, web design, 2D animations and fine art.",
         "dates": {
             "start": "2006/09",
             "end": "2008/07"
@@ -10,6 +11,7 @@
     {
         "name": "Staffordshire University",
         "description": "BSc Multiplayer Online Games Design",
+        "details": "This diploma covers various aspects of game design and programming, including fundamental design, games engines and physics, and rapid prototyping.",
         "dates": {
             "start": "2008/09",
             "end": "2011/04"
@@ -18,6 +20,10 @@
     {
         "name": "Soshi Games",
         "description": "Games Developer",
+        "details": [
+            "As my first role in the industry, I began as a junior developer. I used a wide range of technologies including Flash, AS3, MongoDB, Unity3D and native mobile development in Java and Obj-C.",
+            "I worked on games such as Music Festivals, hosted on Facebook Games, and Clue the Music, a range of music trivia games including working directly with Brian May of Queen."
+        ],
         "dates": {
             "start": "2012/02",
             "end": "2015/08"

@@ -8,6 +8,14 @@
         display: flex;
         flex-direction: row;
 
+        &.details {
+            margin-left: 10px;
+            padding-left: 50px;
+            width: calc(100% - 160px);
+            border-left: 1px #222 dashed;
+            font-size: 0.9em;
+        }
+
         .marker {
             border-left: 1px #222 solid;
             padding-right: 20px;
@@ -25,6 +33,30 @@
                 position: absolute;
                 top: 50%;
                 transform: translate(-50%, -50%);
+            }
+        }
+
+        .expander {
+            width: 20px;
+            color: #222;
+            margin: auto;
+            text-align: center;
+            transform: rotateZ(-90deg);
+
+            &::after {
+                content: "▼";
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &.open {
+                transform: rotateZ(0deg);
+            }
+
+            &.hidden {
+                display: none;
             }
         }
 
