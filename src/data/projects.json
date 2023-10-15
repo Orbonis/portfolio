@@ -30,7 +30,7 @@
             "PixiJS"
         ],
         "links": {
-            "Play": "/games/fatal/index.html",
+            "Play": "/games/fatal/",
             "GitLab": "https://gitlab.com/orbonis-dev/games/fatal-dungeon"
         }
     },
@@ -48,7 +48,7 @@
             "PixiJS"
         ],
         "links": {
-            "Play": "/games/lottery/index.html",
+            "Play": "/games/lottery/",
             "GitLab": "https://gitlab.com/orbonis-dev/games/lottery"
         }
     },
@@ -66,7 +66,7 @@
             "PixiJS"
         ],
         "links": {
-            "Play": "/games/tetris/index.html",
+            "Play": "/games/tetris/",
             "GitLab": "https://gitlab.com/orbonis-dev/games/tetris"
         }
     },
@@ -83,7 +83,7 @@
             "PixiJS"
         ],
         "links": {
-            "Play": "/games/invaders/index.html",
+            "Play": "/games/invaders/",
             "GitLab": "https://gitlab.com/orbonis-dev/games/space-invaders"
         }
     }
