@@ -31,7 +31,7 @@ export class Timeline extends React.Component<IProperties, IState> {
     public render(): ReactNode {
         return (
             <div className="timeline">
-                { this.props.data.reverse().map((x, i) => this.renderRow(x, i)) }
+                { this.props.data.map((x, i) => this.renderRow(x, i)).reverse() }
             </div>
         );
     }

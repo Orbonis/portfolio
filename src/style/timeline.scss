@@ -45,18 +45,23 @@
         }
 
         .expander {
-            width: 20px;
             color: #222;
+            width: 20px;
+            height: 20px;
             margin: auto;
             text-align: center;
-            transform: rotateZ(-90deg);
+            transform: rotateZ(90deg);
 
             &::after {
-                content: "▼";
+                display: block;
+                width: 20px;
+                height: 20px;
+                content: "";
+                background: transparent url("/media/arrow.png") no-repeat;
             }
 
             &.open {
-                transform: rotateZ(0deg);
+                transform: rotateZ(180deg);
             }
 
             &.hidden {
