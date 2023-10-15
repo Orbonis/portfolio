@@ -1,3 +1,5 @@
+let isCompact: boolean = false;
+
 export const adjustBodyHeight = () => {
     const mainBody: HTMLDivElement = document.querySelector(".main") as HTMLDivElement;
     if (!mainBody) {
@@ -17,4 +19,35 @@ export function setupAutoAdjustBodyHeight(): void {
         window.addEventListener('resize', adjustBodyHeight);
         window.setInterval(adjustBodyHeight, 10);
     });
+}
+
+export const adjustRootCSS = () => {
+    const root = document.querySelector(".root") as HTMLDivElement;
+    if (!root) {
+        return;
+    }
+
+    if (root.clientWidth < 1000) {
+        if (!root.classList.contains("compact")) {
+            root.classList.add("compact");
+            isCompact = true;
+        }
+    } else {
+        if (root.classList.contains("compact")) {
+            root.classList.remove("compact");
+            isCompact = false;
+        }
+    }
+};
+
+export function setupRootResizeCSS(): void {
+    document.addEventListener('DOMContentLoaded', function() {
+        adjustRootCSS();
+        window.addEventListener('resize', adjustRootCSS);
+        window.setInterval(adjustRootCSS, 10);
+    });
+}
+
+export function isRootCompact(): boolean {
+    return isCompact;
 }

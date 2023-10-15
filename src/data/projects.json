@@ -1,0 +1,90 @@
+[
+    {
+        "name": "Portfolio Website",
+        "description": [
+            "This website! It's a simple site, build to be viewed on a variety of platforms and screens. I have used a variety of technologies such as React, NodeJS and Flex CSS to make the site as compatible as possible.",
+            "The site was built over a weekend as a test of my ability to recreate my portfolio from scratch."
+        ],
+        "image": "/media/orb.png",
+        "imageBG": "linear-gradient(45deg, #BBC, #FFF)",
+        "tech": [
+            "NodeJS",
+            "React",
+            "Flex"
+        ],
+        "links": {
+            "GitLab": "https://gitlab.com/orbonis-dev/home-server/portfolio"
+        }
+    },
+    {
+        "name": "Fatal",
+        "description": [
+            "This is a small game created for a games jam with the theme 'Fatal'. I created it over the course of about 16 hours and features a simple tile engine.",
+            "The game features a visual take on the old unforgiving text adventures, where any wrong move can be fatal."
+        ],
+        "image": "/media/fatal.png",
+        "tech": [
+            "Typescript",
+            "NodeJS",
+            "React",
+            "PixiJS"
+        ],
+        "links": {
+            "Play": "/games/fatal/index.html",
+            "GitLab": "https://gitlab.com/orbonis-dev/games/fatal-dungeon"
+        }
+    },
+    {
+        "name": "Lottery",
+        "description": [
+            "I imagine that many people coming to this page would be interested in seeing some iGaming related work.",
+            "This project was created as a technical test for Live5 and provides an insight into how I structure my code and my expertise in Typescript, NodeJS, PixiJS and React"
+        ],
+        "image": "/media/lottery.png",
+        "tech": [
+            "Typescript",
+            "NodeJS",
+            "React",
+            "PixiJS"
+        ],
+        "links": {
+            "Play": "/games/lottery/index.html",
+            "GitLab": "https://gitlab.com/orbonis-dev/games/lottery"
+        }
+    },
+    {
+        "name": "Tetris",
+        "description": [
+            "This is a pretty simple one, it's Tetris! I created this game over the course of a weekend as a games jam revolved around creating a retro game from scratch.",
+            "This game, and Invaders, use the same core foundation as a simple game engine. Even though this was made quickly and could use some significant refactoring, it does demonstrate my ability to work quickly and concisely while still keeping code readable and maintainable."
+        ],
+        "image": "/media/tetris.png",
+        "tech": [
+            "Typescript",
+            "NodeJS",
+            "React",
+            "PixiJS"
+        ],
+        "links": {
+            "Play": "/games/tetris/index.html",
+            "GitLab": "https://gitlab.com/orbonis-dev/games/tetris"
+        }
+    },
+    {
+        "name": "Invaders",
+        "description": [
+            "Another simple retro game, based on Space Invaders. There is not much more to say, other than to highlight how this uses a simple game framework that is shared between this and Tetris."
+        ],
+        "image": "/media/invaders.png",
+        "tech": [
+            "Typescript",
+            "NodeJS",
+            "React",
+            "PixiJS"
+        ],
+        "links": {
+            "Play": "/games/invaders/index.html",
+            "GitLab": "https://gitlab.com/orbonis-dev/games/space-invaders"
+        }
+    }
+]
