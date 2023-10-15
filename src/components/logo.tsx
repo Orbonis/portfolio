@@ -1,5 +1,5 @@
 import React from "react";
-import TWEEN, { Easing } from "@tweenjs/tween.js";
+import { Easing, Tween, update as TweenUpdate } from "@tweenjs/tween.js";
 
 interface ITextData {
     text: string;
@@ -21,14 +21,10 @@ interface ICanvasData {
 }
 
 interface IProperties {
-    theme: string;
-}
-
-interface IState {
     
 }
 
-export class LogoComponent extends React.Component<IProperties, IState> {
+export class Logo extends React.Component<IProperties, {}> {
     protected ctx?: CanvasRenderingContext2D;
     protected animationFrame?: number;
     protected font: IFontData = { size: 70, family: "consolas", minSize: 0, colour: "#666666" };
@@ -46,20 +42,24 @@ export class LogoComponent extends React.Component<IProperties, IState> {
         "bitbucket",
         "c#",
         "java",
-        "unity"
+        "unity",
+        "docker"
     ];
     protected textData: ITextData[] = [];
+    protected canvasID: string;
 
     constructor(props: IProperties) {
         super(props);
 
         this.state = {};
+
+        this.canvasID = "logo-canvas-" + Math.floor(Math.random() * 1000);
     }
 
     public componentDidMount(): void {
         this.updateColour();
 
-        const canvas = document.getElementById("logo-canvas") as HTMLCanvasElement | null;
+        const canvas = document.getElementById(this.canvasID) as HTMLCanvasElement | null;
         if (canvas && !this.ctx) {
             this.setupCanvas(canvas);
         }
@@ -71,12 +71,12 @@ export class LogoComponent extends React.Component<IProperties, IState> {
 
     public render(): JSX.Element {
         return (
-            <canvas id="logo-canvas" className="logo-canvas" width={this.canvas.width} height={this.canvas.height} title="This serves no purpose and has no meaning. I was bored."></canvas>
+            <canvas id={ this.canvasID } className="logo-canvas" width={this.canvas.width} height={this.canvas.height} title="This serves no purpose and has no meaning. I was bored."></canvas>
         );
     }
 
     protected updateColour(): void {
-        this.font.colour = (this.props.theme === "light") ? "#666666" : "#CCCCCC";
+        this.font.colour = "#CCCCCC";
     }
 
     protected setupCanvas(canvas: HTMLCanvasElement): void {
@@ -88,7 +88,7 @@ export class LogoComponent extends React.Component<IProperties, IState> {
                 this.textData = this.text.map(this.getTextData);
 
                 this.textData.forEach((data) => {
-                    new TWEEN.Tween(data)
+                    new Tween(data)
                         .to({ x: -data.x, y: -data.y }, ((this.getDistance(data) * 2) / this.canvas.width) * this.canvas.timeToCross)
                         .repeat(Infinity)
                         .yoyo(true)
@@ -110,7 +110,7 @@ export class LogoComponent extends React.Component<IProperties, IState> {
 
     protected update = (time: number): void => {
         if (this.ctx) {
-            TWEEN.update(time);
+            TweenUpdate(time);
 
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
             this.textData.forEach(this.drawText);

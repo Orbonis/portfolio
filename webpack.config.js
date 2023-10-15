@@ -7,20 +7,20 @@ const data = {
     mode: "development",
     entry: "./src/index.tsx",
     output: {
-        path: path.resolve(__dirname, "build"),
-        filename: "index.js"
+        path: path.resolve(__dirname, "dist"),
+        filename: "index.js",
+        publicPath: "/"
     },
     devtool: "source-map",
-    devServer: {
-        contentBase: path.join(__dirname, "build"),
-        port: 8080
-    },
     resolve: {
         extensions: [".ts", ".tsx", ".js"],
         modules: [
             path.resolve(__dirname, 'node_modules'),
             path.resolve(__dirname, compilerOptions.baseUrl),
         ],
+    },
+    devServer: {
+        historyApiFallback: true
     },
     module: {
         rules: [
@@ -62,12 +62,13 @@ const data = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-            title: "Dean Rutter"
+            template: "src/index-template.html"
         }),
         new CopyWebpackPlugin({
             patterns: [
                 { from: "games", to: "games" },
-                { from: "media", to: "media" }
+                { from: "media", to: "media" },
+                { from: "src/favicon.ico", to: "favicon.ico" }
             ]
         })
     ]

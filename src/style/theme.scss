@@ -1,0 +1,157 @@
+body {
+    color: #CCC;
+    background-color: #646;
+}
+
+.header {
+    padding: 10px 10px 0 10px;
+
+    h1 {
+        margin: 0;
+        display: block;
+    }
+    
+    h2 {
+        margin: 0;
+        display: block;
+        font-size: 1em;
+    }
+
+    .logo {
+        width: 80px;
+        max-width: 10vw;
+    }
+}
+
+.main { 
+    margin: 0 10px 0 10px;
+    padding: 0 10px 0 10px;
+    overflow-y: auto;
+
+    h1 {
+        margin: 10px 0 20px 0;
+        padding: 0 10px 0 10px;
+        font-size: 1.5em;
+    }
+
+    p {
+        margin: 10px 0 20px 0;
+        padding: 0 10px 0 10px;
+    }
+
+    .small {
+        font-size: 0.8em;
+        font-weight: bold;
+        opacity: 0.8;
+    }
+
+    .highlight {
+        color: #B26;
+        font-weight: bold;
+    }
+
+    .profile-pic {
+        height: 120px;
+        border: 1px #999 solid;
+        border-radius: 5px;
+        background-image: linear-gradient(#DDE, #FFF);
+        margin: 0 20px 0 10px;
+    }
+
+    .logo-row {
+        display: none;
+    }
+
+    .grid.contacts {
+        .grid-header {
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        .content {
+            padding: 5px 15px;
+
+            a {
+                color: #222;
+            }
+
+            a:hover {
+                color: #555;
+            }
+        }
+    }
+
+    .grid {
+        color: #444;
+
+        .grid-header {
+            background-color: #444;
+            color: #EEE;
+            font-weight: bold;
+
+            &.column {
+                background-image: linear-gradient(90deg, #446, #222);
+            }
+
+            &.row {
+                background-image: linear-gradient(#446, #222);
+            }
+
+            .row {
+                outline: none !important;
+            }
+
+            .column {
+                outline: none !important;
+            }
+        }
+    }
+
+    .grid.outline .row {
+        outline: 1px solid #444;
+    }
+    
+    .grid.outline .column {
+        outline: 1px solid #444;
+    }
+
+    .timeline {
+        p {
+            padding: 5px 0;
+            margin: 0;
+        }
+
+        .entry.details {
+            padding-bottom: 10px;
+        }
+    }
+}
+
+.portrait {
+    .main {
+        .logo-column {
+            display: none;
+        }
+
+        .logo-row {
+            display: flex;
+
+            .content {
+                margin: 0 auto 0 auto;
+            }
+        }
+    }
+}
+
+.background.top {
+    background-color: #222;
+}
+
+.background.bottom {
+    background-image: linear-gradient(#222, #446, #646);
+    height: 1000px;
+}
+
+.logo-canvas {
+    width: 300px;
+}

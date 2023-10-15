@@ -1,0 +1,80 @@
+[
+    {
+        "name": "Mid Cheshire College",
+        "description": "BTEC Multimedia",
+        "details": "This degree includes various multimedia implementations including graphic design, web design, 2D animations and fine art.",
+        "dates": {
+            "start": "2006/09",
+            "end": "2008/07"
+        }
+    },
+    {
+        "name": "Staffordshire University",
+        "description": "BSc Multiplayer Online Games Design",
+        "details": "This diploma covers various aspects of game design and programming, including fundamental design, games engines and physics, and rapid prototyping.",
+        "dates": {
+            "start": "2008/09",
+            "end": "2011/04"
+        }
+    },
+    {
+        "name": "Soshi Games",
+        "description": "Games Developer",
+        "details": [
+            "As my first role in the industry, I began as a junior developer. I used a wide range of technologies including Flash, AS3, MongoDB, Unity and native mobile development in Java and Obj-C.",
+            "I worked on games such as Music Festivals, hosted on Facebook Games, and Clue the Music, a range of music trivia games including working directly with Brian May of Queen."
+        ],
+        "dates": {
+            "start": "2012/02",
+            "end": "2015/08"
+        }
+    },
+    {
+        "name": "Intouch Games",
+        "description": "Lead/Senior Developer",
+        "details": [
+            "At ITG I started as a lead developer managing a small team of 5-6 developers and artists working on slots games.",
+            "Later I progressed to senior developer as a part of the framework team, where I managed dev ops for the the games development team, including TeamCity and a games deployment to our QA department.",
+            "During my time there I used Unity & C#, and Typescript & PixiJS."
+        ],
+        "dates": {
+            "start": "2015/08",
+            "end": "2019/04"
+        }
+    },
+    {
+        "name": "Epic Industries",
+        "description": "Senior Developer",
+        "details": [
+            "At Epic Industries I helped to build and shape a framework used for building slots games. I created tools and utilites to streamline the development process and build a robust deployment system for all aspects of the client deployment using TeamCity, AWS and a custom built games portal.",
+            "Technologies used include Typescript, PixiJS, AWS, Bash, MySQL, Node and many other related technologies."
+        ],
+        "dates": {
+            "start": "2019/05",
+            "end": "2022/06"
+        }
+    },
+    {
+        "name": "G.Games",
+        "description": "Senior Developer",
+        "details": [
+            "At G.Games I continued my efforts from Epic Industries after they were purchased by G.",
+            "Using many of the same technologies I helped to transistion the company over and improve the systems currently in place, including Jenkins, Ansible and Terraform."
+        ],
+        "dates": {
+            "start": "2022/06",
+            "end": "2023/08"
+        }
+    },
+    {
+        "name": "Live 5",
+        "description": "Senior Developer",
+        "details": [
+            "During my time, so far, at Live5 I have built systems for improve the Development and QA process, including building a custom portal that allows for accessing all versions of the games and virtual retail cabinets that are dynamically created using AWS and Docker.",
+            "I am continuing my efforts to improve development with the addition of a digital assistant npm package to handle lib updates, versioning, and patch notes."
+        ],
+        "dates": {
+            "start": "2023/09"
+        }
+    }
+]
