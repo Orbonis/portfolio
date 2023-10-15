@@ -22,7 +22,7 @@ export class Projects extends Page {
             <Body>
                 <Segment>
                     <p>
-                    Unfortunately much of my work is protected as proprietary code form the previous companies I've worked for. 
+                    Unfortunately much of my work is protected as proprietary code for the previous companies I've worked for. 
                     So, I have created a small selection of projects as a snapshot of what I am cabable of and as an example of my coding standards.
                     </p> 
                 </Segment>
