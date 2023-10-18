@@ -31,7 +31,7 @@
     },
     {
         "name": "Intouch Games",
-        "description": "Lead/Senior Developer",
+        "description": "Lead/Senior Developer (Slots & Framework Development)",
         "details": [
             "At ITG I started as a lead developer managing a small team of 5-6 developers and artists working on slots games.",
             "Later I progressed to senior developer as a part of the framework team, where I managed dev ops for the the games development team, including TeamCity and a games deployment to our QA department.",
@@ -44,7 +44,7 @@
     },
     {
         "name": "Epic Industries",
-        "description": "Senior Developer",
+        "description": "Senior Developer (Slots Development & Dev Ops)",
         "details": [
             "At Epic Industries I helped to build and shape a framework used for building slots games. I created tools and utilites to streamline the development process and build a robust deployment system for all aspects of the client deployment using TeamCity, AWS and a custom built games portal.",
             "Technologies used include Typescript, PixiJS, AWS, Bash, MySQL, Node and many other related technologies."
@@ -56,7 +56,7 @@
     },
     {
         "name": "G.Games",
-        "description": "Senior Developer",
+        "description": "Senior Developer (Dev Ops)",
         "details": [
             "At G.Games I continued my efforts from Epic Industries after they were purchased by G.",
             "Using many of the same technologies I helped to transistion the company over and improve the systems currently in place, including Jenkins, Ansible and Terraform."
@@ -68,7 +68,7 @@
     },
     {
         "name": "Live 5",
-        "description": "Senior Developer",
+        "description": "Senior Developer (Dev Ops)",
         "details": [
             "During my time, so far, at Live5 I have built systems for improve the Development and QA process, including building a custom portal that allows for accessing all versions of the games and virtual retail cabinets that are dynamically created using AWS and Docker.",
             "I am continuing my efforts to improve development with the addition of a digital assistant npm package to handle lib updates, versioning, and patch notes."
