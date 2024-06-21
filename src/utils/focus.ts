@@ -39,7 +39,8 @@ export function highlightWords(html: string): string {
         "npm package",
         "Node",
         "Spine",
-        "AI-powered"
+        "AI-powered",
+        "React"
     ];
     for (const word of keywords) {
         html = html.split(new RegExp(word, "i")).join(`<span class="highlight">${word}</span>`);
