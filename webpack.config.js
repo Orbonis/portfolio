@@ -8,7 +8,7 @@ const data = {
     entry: "./src/index.tsx",
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "index.js",
+        filename: '[name].[contenthash].js',
         publicPath: "/"
     },
     devtool: "source-map",
