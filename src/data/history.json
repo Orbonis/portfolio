@@ -70,11 +70,14 @@
         "name": "Live 5",
         "description": "Senior Developer (Dev Ops)",
         "details": [
-            "During my time, so far, at Live5 I have built systems for improve the Development and QA process, including building a custom portal that allows for accessing all versions of the games and virtual retail cabinets that are dynamically created using AWS and Docker.",
-            "I am continuing my efforts to improve development with the addition of a digital assistant npm package to handle lib updates, versioning, and patch notes."
+            "At Live5, I designed and implemented systems to enhance efficiency and productivity. Key achievements include:",
+            "• Building a custom portal providing seamless access to all game versions and virtual retail cabinets using AWS and Docker.",
+            "• Creating an AI-powered virtual assistant for code-related information and integrating it with a holiday system for simplified booking and management of free days.",
+            "• Developing a self-service platform allowing artists to test Spine animations in the game environment independently, without developer involvement."
         ],
         "dates": {
-            "start": "2023/09"
+            "start": "2023/09",
+            "end": "2024/07"
         }
     }
 ]
