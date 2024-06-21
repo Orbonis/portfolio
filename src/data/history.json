@@ -71,7 +71,7 @@
         "description": "Senior Developer (Dev Ops)",
         "details": [
             "At Live5, I designed and implemented systems to enhance efficiency and productivity. Key achievements include:",
-            "- Building a custom portal providing seamless access to all game versions and virtual retail cabinets using AWS and Docker.",
+            "- Building a custom portal using React, TypeScript and Node that provided seamless access to all game versions and virtual retail cabinets using AWS and Docker.",
             "- Creating an AI-powered virtual assistant for code-related information and integrating it with a holiday system for simplified booking and management of free days.",
             "- Developing a self-service platform allowing artists to test Spine animations in the game environment independently, without developer involvement."
         ],
