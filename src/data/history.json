@@ -74,7 +74,7 @@
             "- Building a custom portal using React, TypeScript and Node that provided seamless access to all game versions and virtual retail cabinets using AWS and Docker.",
             "- Creating an AI-powered virtual assistant for code-related information and integrating it with a holiday system for simplified booking and management of free days.",
             "- Developing a self-service platform allowing artists to test Spine animations in the game environment independently, without developer involvement.",
-            "- Managing the CI pipeline for various different builds and providing means for distribution and deployment of those builds to the correct infrastructure."
+            "- Maintaining and managing the CI pipeline for various different builds and providing means for distribution and deployment to the correct infrastructure."
         ],
         "dates": {
             "start": "2023/09",
