@@ -54,6 +54,9 @@
         font-size: 30px;
         cursor: pointer;
         z-index: 1100;
+        -webkit-user-select: none; 
+        -ms-user-select: none; 
+        user-select: none; 
 
         &.left {
             left: 20px;
