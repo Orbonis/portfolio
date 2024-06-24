@@ -25,7 +25,7 @@ interface IProperties extends HTMLProps<HTMLDivElement> {
 
 interface IState {
     isCompact: boolean;
-    showModal: boolean;
+    showScreenshots: boolean;
 }
 
 export class Project extends React.Component<IProperties, IState> {
@@ -34,7 +34,7 @@ export class Project extends React.Component<IProperties, IState> {
 
         this.state = {
             isCompact: isRootCompact(),
-            showModal: false
+            showScreenshots: false
         };
     }
 
@@ -95,9 +95,9 @@ export class Project extends React.Component<IProperties, IState> {
                     </div>
                 </div>
                 <Modal
-                    visible={this.state.showModal}
+                    visible={this.state.showScreenshots}
                     screenshots={this.props.project.screenshots}
-                    onClose={() => this.setState({ showModal: false })}
+                    onClose={() => this.setState({ showScreenshots: false })}
                 />
             </Segment>
         );
@@ -106,7 +106,7 @@ export class Project extends React.Component<IProperties, IState> {
     private handleSpecialLink(tag: string): void {
         switch (tag) {
             case "%show_screenshots%":
-                this.setState({ showModal: true });
+                this.setState({ showScreenshots: true });
                 break;
         }
     }
