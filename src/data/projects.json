@@ -17,6 +17,58 @@
         }
     },
     {
+        "name": "DevOps Portal",
+        "description": [
+            "While at Live5 I developed a games portal, designed for loading games and helping to steamline QA. As most of our games needed to be tested in a \"Virtual Cabinet\" I created a virtual cab system that will spawn a EC2 instance running the docker image and created an interface to install games and grab the logs.",
+            "In time more features were requested from all over the business, including holiday management systems, sick report system, Spine animation testing, etc."
+        ],
+        "image": "/media/screenshots/portal/1.png",
+        "imageBG": "linear-gradient(45deg, #BBC, #FFF)",
+        "tech": [
+            "NodeJS",
+            "React",
+            "AWS",
+            "Docker"
+        ],
+        "links": {
+            "Images": "%show_screenshots%"
+        },
+        "screenshots": [
+            { 
+                "url": "/media/screenshots/portal/1.png", 
+                "caption": "A dynamic game selector that automatically adds games and version using the GitLab API, an install interface for any cabs currently running, and various different tools for deploying the builds to different servers."
+            },
+            {
+                "url": "/media/screenshots/portal/2.png",
+                "caption": "A storage system that allows all of our files to be accessed on a local server in the office by all remote staff."
+            },
+            {
+                "url": "/media/screenshots/portal/3.png",
+                "caption": "Virtual cab controls to request a cab, restart it, access the installed games, and flag anything as broken easily from within the portal."
+            },
+            {
+                "url": "/media/screenshots/portal/4.png",
+                "caption": "A calendar system for booking and modifying holidays. You can also see who is off sick, at external appointments, etc."
+            },
+            {
+                "url": "/media/screenshots/portal/5.png",
+                "caption": "Sickness reporting system that generates a digitally signed return to work form and creates a PDF for HR records."
+            },
+            {
+                "url": "/media/screenshots/portal/6.png",
+                "caption": "The ability to pull logs from the virtual cabs."
+            },
+            {
+                "url": "/media/screenshots/portal/7.png",
+                "caption": "Translations can be easily edited and updated in the database by authorized users, including specific game translations and propergating changes across all games."
+            },
+            {
+                "url": "/media/screenshots/portal/8.png",
+                "caption": "Spine testing tool (unfortunately unable to load after company closure). Allowed for seeing animations within a game before providing the assets to the developer for implementation."
+            }
+        ]
+    },
+    {
         "name": "Fatal",
         "description": [
             "This is a small game created for a games jam with the theme 'Fatal'. I created it over the course of about 16 hours and features a simple tile engine.",

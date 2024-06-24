@@ -2,6 +2,7 @@ import React, { HTMLProps, ReactNode } from "react";
 import { isRootCompact } from "src/utils/auto-sizing";
 import { testImage } from "src/utils/debugging";
 import { Segment } from "./segment";
+import { Modal } from "./modal";
 
 export interface ProjectData {
     name: string;
@@ -10,6 +11,12 @@ export interface ProjectData {
     image?: string;
     imageBG?: string;
     links: { [key: string]: string };
+    screenshots: ProjectDataScreenshot[];
+}
+
+export interface ProjectDataScreenshot {
+    url: string;
+    caption: string;
 }
 
 interface IProperties extends HTMLProps<HTMLDivElement> {
@@ -18,6 +25,7 @@ interface IProperties extends HTMLProps<HTMLDivElement> {
 
 interface IState {
     isCompact: boolean;
+    showModal: boolean;
 }
 
 export class Project extends React.Component<IProperties, IState> {
@@ -25,7 +33,8 @@ export class Project extends React.Component<IProperties, IState> {
         super(props);
 
         this.state = {
-            isCompact: isRootCompact()
+            isCompact: isRootCompact(),
+            showModal: false
         };
     }
 
@@ -40,7 +49,31 @@ export class Project extends React.Component<IProperties, IState> {
 
         const links: ReactNode =
             Object.keys(this.props.project.links)
-            .map((key, i) => <a key={`${projectID}-link-${i}`} className="link" href={ this.props.project.links[key] } target="_blank">{ key }</a>);
+            .map((key, i) => {
+                if (/%[a-zA-Z0-9_\-]+%/.test(this.props.project.links[key])) {
+                    return (
+                        <a
+                            key={`${projectID}-link-${i}`}
+                            className="link"
+                            href="#"
+                            onClick={() => this.handleSpecialLink(this.props.project.links[key])}
+                        >
+                            { key }
+                        </a>
+                    );
+                } else {
+                    return (
+                        <a
+                            key={`${projectID}-link-${i}`}
+                            className="link"
+                            href={ this.props.project.links[key] }
+                            target="_blank"
+                        >
+                            { key }
+                        </a>
+                    );
+                }
+            });
 
         return (
             <Segment>
@@ -61,7 +94,20 @@ export class Project extends React.Component<IProperties, IState> {
                         { techHTML }
                     </div>
                 </div>
+                <Modal
+                    visible={this.state.showModal}
+                    screenshots={this.props.project.screenshots}
+                    onClose={() => this.setState({ showModal: false }, () => console.log("test"))}
+                />
             </Segment>
         );
+    }
+
+    private handleSpecialLink(tag: string): void {
+        switch (tag) {
+            case "%show_screenshots%":
+                this.setState({ showModal: true });
+                break;
+        }
     }
 }

@@ -2,7 +2,6 @@ import React, { HTMLProps, ReactNode } from "react";
 import { Body } from "src/components/body";
 import { Segment } from "src/components/core/segment";
 import { Page } from "./core/page";
-import { Grid } from "src/components/core/grid";
 import { Project, ProjectData } from "src/components/core/project";
 
 import projectJSON from "../data/projects.json";

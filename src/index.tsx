@@ -8,6 +8,7 @@ import "src/style/root.scss";
 import "src/style/grid.scss";
 import "src/style/timeline.scss";
 import "src/style/project.scss";
+import "src/style/modal.scss";
 import "src/style/misc.scss";
 import "src/style/theme.scss";
 
