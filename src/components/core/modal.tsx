@@ -35,8 +35,8 @@ export class Modal extends React.Component<IProperties, IState> {
             return (
                 <div className="modal" style={{ display: ((this.props.visible) ? "flex" : "none") }}>
                     <div className="close-button" onClick={() => this.props.onClose()}>X</div>
-                    <img src={this.props.screenshots[this.state.index].url ?? ""}></img>
                     <div className="caption">{ this.props.screenshots[this.state.index].caption }</div>
+                    <img src={this.props.screenshots[this.state.index].url ?? ""}></img>
                     <div className="left arrow" onClick={() => this.modifyIndex(-1)}>&lt;</div>
                     <div className="right arrow" onClick={() => this.modifyIndex(1)}>&gt;</div>
                     <div className="background"></div>
