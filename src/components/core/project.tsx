@@ -97,7 +97,7 @@ export class Project extends React.Component<IProperties, IState> {
                 <Modal
                     visible={this.state.showModal}
                     screenshots={this.props.project.screenshots}
-                    onClose={() => this.setState({ showModal: false }, () => console.log("test"))}
+                    onClose={() => this.setState({ showModal: false })}
                 />
             </Segment>
         );
