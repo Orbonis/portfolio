@@ -50,3 +50,17 @@ a:hover {
 .divider.hidden {
     border: none;
 }
+
+.skills {
+    margin: 20px;
+
+    .skills-grid {
+        width: 100%;
+        
+        .skill-header {
+            background-color: #447;
+            color: #FFF;
+            font-weight: bold;
+        }
+    }
+}

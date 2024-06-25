@@ -4,6 +4,7 @@ import { Header } from "./components/header";
 import { Home } from "./pages/home";
 import { History } from "./pages/history";
 import { Projects } from "./pages/projects";
+import { Skills } from "./pages/skills";
 
 interface IProperties {
 
@@ -30,6 +31,7 @@ export class Application extends React.Component<IProperties, IState> {
                         <Route index element={<Home />} />
                         <Route path="/history" element={<History />} />
                         <Route path="/projects" element={<Projects />} />
+                        <Route path="/skills" element={<Skills />} />
                         <Route path="*" element={<Home />} />
                     </Route>
                 </Routes>

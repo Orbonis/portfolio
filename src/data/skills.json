@@ -1,0 +1,22 @@
+[
+    { "name": "HTML5", "rating": 5 },
+    { "name": "Obj-C", "rating": 3 },
+    { "name": "Java", "rating": 3 },
+    { "name": "CSS", "rating": 5 },
+    { "name": "PixiJS", "rating": 5 },
+    { "name": "JavaScript", "rating": 5 },
+    { "name": "TypeScript", "rating": 5 },
+    { "name": "MongoDB", "rating": 4 },
+    { "name": "Unity", "rating": 4 },
+    { "name": "C#", "rating": 5 },
+    { "name": "TeamCity", "rating": 5 },
+    { "name": "AWS", "rating": 5 },
+    { "name": "Bash", "rating": 5 },
+    { "name": "MySQL", "rating": 4 },
+    { "name": "Jenkins", "rating": 3 },
+    { "name": "Ansible", "rating": 3 },
+    { "name": "Terraform", "rating": 3 },
+    { "name": "Docker", "rating": 5 },
+    { "name": "Node", "rating": 5 },
+    { "name": "React", "rating": 5 }
+]

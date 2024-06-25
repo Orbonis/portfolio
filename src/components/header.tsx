@@ -46,6 +46,11 @@ export class Header extends React.Component<HTMLProps<HTMLDivElement>, {}> {
                                 <Link to="/projects">Projects</Link>
                             </Grid.Content>
                         </Grid.Row>
+                        <Grid.Row fitted>
+                            <Grid.Content fitted>
+                                <Link to="/skills">Skills</Link>
+                            </Grid.Content>
+                        </Grid.Row>
                     </Grid.Column>
                 </Grid.Row>
             </Grid>,
