@@ -42,13 +42,13 @@ export class Skills extends Page {
             <Grid.Row>
                 <Grid.Column>
                     <Grid className="skills-grid" outline>
-                        { skills.slice(0, Math.floor(skills.length / 2)).map((x) => this.renderSkill(x)) }
+                        { skills.slice(0, Math.ceil(skills.length / 2)).map((x) => this.renderSkill(x)) }
                     </Grid>
                 </Grid.Column>
                 <Divider hidden />
                 <Grid.Column>
                     <Grid className="skills-grid" outline>
-                        { skills.slice(Math.floor(skills.length / 2)).map((x) => this.renderSkill(x)) }
+                        { skills.slice(Math.ceil(skills.length / 2)).map((x) => this.renderSkill(x)) }
                     </Grid>
                 </Grid.Column>
             </Grid.Row>
