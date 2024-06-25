@@ -47,7 +47,7 @@ export class Skills extends Page {
     }
 
     private renderSkill(skill: SkillData): ReactNode {
-        const stars: string = new Array(skill.rating + 1).join("★") + new Array(5 - skill.rating + 1).join("☆");
+        const stars: string = new Array(skill.rating + 1).join("&#9733;") + new Array(5 - skill.rating + 1).join("&#9734;");
 
         return (
             <Grid.Row>
@@ -58,7 +58,7 @@ export class Skills extends Page {
                 </Grid.Column>
                 <Grid.Column>
                     <Grid.Content>
-                        { stars }
+                        <span dangerouslySetInnerHTML={{ __html: stars }}></span>
                     </Grid.Content>
                 </Grid.Column>
             </Grid.Row>
