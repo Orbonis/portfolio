@@ -125,6 +125,20 @@ body {
             padding-bottom: 10px;
         }
     }
+
+    .generate-pdf {
+        text-align: center;
+        padding: 10px;
+
+        a {
+            color: #50F;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #80F;
+        }
+    }
 }
 
 .portrait {
