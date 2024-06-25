@@ -5,6 +5,7 @@ import { Page } from "./core/page";
 import skillsData from "../data/skills.json";
 import { Grid } from "src/components/core/grid";
 import { Divider } from "src/components/core/divider";
+import { isMobile } from "src/utils/mobile";
 
 export interface SkillData {
     name: string;
@@ -20,6 +21,8 @@ export class Skills extends Page {
 
     public render(): ReactNode {
         const skills: SkillData[] = skillsData;
+        const node: ReactNode = (isMobile()) ? this.renderMobile(skills) : this.renderDesktop(skills);
+
         return (
             <Body>
                 <Segment>
@@ -27,22 +30,40 @@ export class Skills extends Page {
                     <p>I am highly motivated and eager to learn new tech as it presents itself. While I may not have used some of these skills in recent jobs I have continued to use them for personal projects and games jams.</p>
                     
                     <Grid className="skills">
-                        <Grid.Row>
-                            <Grid.Column>
-                                <Grid className="skills-grid" outline>
-                                    { skills.slice(0, Math.floor(skills.length / 2)).map((x) => this.renderSkill(x)) }
-                                </Grid>
-                            </Grid.Column>
-                            <Divider hidden />
-                            <Grid.Column>
-                                <Grid className="skills-grid" outline>
-                                    { skills.slice(Math.floor(skills.length / 2)).map((x) => this.renderSkill(x)) }
-                                </Grid>
-                            </Grid.Column>
-                        </Grid.Row>
+                        { node }
                     </Grid>
                 </Segment>
             </Body>
+        );
+    }
+
+    private renderDesktop(skills: SkillData[]): ReactNode {
+        return (
+            <Grid.Row>
+                <Grid.Column>
+                    <Grid className="skills-grid" outline>
+                        { skills.slice(0, Math.floor(skills.length / 2)).map((x) => this.renderSkill(x)) }
+                    </Grid>
+                </Grid.Column>
+                <Divider hidden />
+                <Grid.Column>
+                    <Grid className="skills-grid" outline>
+                        { skills.slice(Math.floor(skills.length / 2)).map((x) => this.renderSkill(x)) }
+                    </Grid>
+                </Grid.Column>
+            </Grid.Row>
+        );
+    }
+
+    private renderMobile(skills: SkillData[]): ReactNode {
+        return (
+            <Grid.Row>
+                <Grid.Column>
+                    <Grid className="skills-grid" outline>
+                        { skills.map((x) => this.renderSkill(x)) }
+                    </Grid>
+                </Grid.Column>
+            </Grid.Row>
         );
     }
 
