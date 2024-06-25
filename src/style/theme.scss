@@ -139,6 +139,22 @@ body {
             color: #80F;
         }
     }
+
+    .skills-explanation {
+        font-size: 0.8em;
+        padding: 10px 5px;
+    
+        h1 {
+            margin: 0 10px 5px 10px;
+            padding: 0;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    
+        p {
+            margin: 0.1em;
+        }
+    }
 }
 
 .portrait {

@@ -14,9 +14,10 @@
     { "name": "Bash", "rating": 5 },
     { "name": "MySQL", "rating": 4 },
     { "name": "Jenkins", "rating": 3 },
-    { "name": "Ansible", "rating": 3 },
+    { "name": "Ansible", "rating": 2 },
     { "name": "Terraform", "rating": 3 },
     { "name": "Docker", "rating": 5 },
     { "name": "Node", "rating": 5 },
-    { "name": "React", "rating": 5 }
+    { "name": "React", "rating": 5 },
+    { "name": "Python", "rating": 4 }
 ]

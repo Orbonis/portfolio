@@ -32,6 +32,14 @@ export class Skills extends Page {
                     <Grid className="skills">
                         { node }
                     </Grid>
+
+                    <Segment className="skills-explanation">
+                        <h1>Star Rating</h1>
+                        <p>The star rating indicates my confidence in my abilities with that skill.</p>
+                        <p>5 - Very confident. No concerns with anything involving this technology.</p>
+                        <p>3 - I was very familiar at some point, but either there have been significant changes or I'm a little rusty.</p>
+                        <p>1 - I have used the skill in the past and I am confident I can bring myself up to speed quickly.</p>
+                    </Segment>
                 </Segment>
             </Body>
         );

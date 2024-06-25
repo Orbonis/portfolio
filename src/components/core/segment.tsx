@@ -16,8 +16,10 @@ export class Segment extends React.Component<IProperties, IState> {
     }
 
     public render(): ReactNode {
+        const className: string = "segment " + (this.props.className ?? "");
+
         return (
-            <div className="segment" style={this.props.style}>
+            <div className={className} style={this.props.style}>
                 { this.props.children }
             </div>
         );
