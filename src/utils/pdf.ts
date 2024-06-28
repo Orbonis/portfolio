@@ -16,10 +16,18 @@ export function generatePDF(): void {
     doc.text("Dean Rutter", position.x, position.y);
     position.y += 4;
     doc.setFontSize(8);
-    doc.setTextColor("#0000FF")
+    doc.setTextColor("#0000FF");
     doc.textWithLink("https://www.orbonis.co.uk/", position.x, position.y, { url: "https://www.orbonis.co.uk/" });
-    doc.setTextColor("#000000")
+    doc.setTextColor("#000000");
+    position.y += 5;
+
+    doc.text("Belle Vale", position.x, position.y);
+    position.y += 3;
+    doc.text("Halesown", position.x, position.y);
+    position.y += 3;
+    doc.text("B63", position.x, position.y);
     position.y += 10;
+
     for (const entry of history) {
         addHistoryEntry(doc, position, entry);
     }
