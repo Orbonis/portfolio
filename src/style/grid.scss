@@ -150,12 +150,21 @@
     .row > .content.bottom {
         vertical-align: bottom;
     }
+
+    &.outline {
+        .row {
+            border-bottom: 1px solid #222;
+            margin-top: 0 !important;
+            outline: none !important;
+        }
+    
+        .row:last-child {
+            border-bottom: none;
+        }
+    
+        .column {
+            outline: 1px solid #222;
+        }
+    }
 }
 
-.grid.outline .row {
-    outline: 1px solid #222;
-}
-
-.grid.outline .column {
-    outline: 1px solid #222;
-}

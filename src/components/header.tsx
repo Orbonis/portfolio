@@ -13,11 +13,6 @@ export class Header extends React.Component<HTMLProps<HTMLDivElement>, {}> {
         return [
             <Grid key="header-grid" className="header">
                 <Grid.Row>
-                    <Grid.Column fitted vertical="middle">
-                        <Grid.Content>
-                            <img className="logo" src="/media/orb.png" />
-                        </Grid.Content>
-                    </Grid.Column>
                     <Grid.Column vertical="middle">
                         <Grid.Row fitted>
                             <Grid.Content>

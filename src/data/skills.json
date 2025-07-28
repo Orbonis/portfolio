@@ -19,5 +19,6 @@
     { "name": "Docker", "rating": 5 },
     { "name": "Node", "rating": 5 },
     { "name": "React", "rating": 5 },
-    { "name": "Python", "rating": 4 }
+    { "name": "Python", "rating": 4 },
+    { "name": "Azure", "rating": 4 }
 ]
