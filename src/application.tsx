@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, MemoryRouter } from "react-router-dom";
 import { Header } from "./components/header";
 import { Home } from "./pages/home";
 import { History } from "./pages/history";
@@ -14,6 +14,8 @@ interface IState {
     
 }
 
+const ENABLE_URL_ROUTING: boolean = process.env.ENABLE_URL_ROUTING === "true";
+
 export class Application extends React.Component<IProperties, IState> {
     constructor(props: {}) {
         super(props);
@@ -24,8 +26,10 @@ export class Application extends React.Component<IProperties, IState> {
     }
 
     public render(): ReactNode {
+        const Router = ENABLE_URL_ROUTING ? BrowserRouter : MemoryRouter;
+        
         return (
-            <BrowserRouter>
+            <Router>
                 <Routes>
                     <Route path="/" element={<Header />}>
                         <Route index element={<Home />} />
@@ -35,7 +39,7 @@ export class Application extends React.Component<IProperties, IState> {
                         <Route path="*" element={<Home />} />
                     </Route>
                 </Routes>
-            </BrowserRouter>
+            </Router>
         );
     }
 }

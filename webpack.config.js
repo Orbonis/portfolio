@@ -2,6 +2,7 @@ const path = require("path");
 const { compilerOptions } = require("./tsconfig.json");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 const data = {
     mode: "development",
@@ -53,6 +54,7 @@ const data = {
         ]
     },
     plugins: [
+        new Dotenv(),
         new HTMLWebpackPlugin({
             template: "src/index-template.html"
         }),
