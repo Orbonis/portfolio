@@ -3,7 +3,7 @@
         "name": "Portfolio Website",
         "description": [
             "This website! It's a simple site, build to be viewed on a variety of platforms and screens. I have used a variety of technologies such as React, NodeJS and Flex CSS to make the site as compatible as possible.",
-            "The site was built over a weekend as a test of my ability to recreate my portfolio from scratch."
+            "The site was built over a weekend as a test of my ability to recreate my portfolio from scratch. It also deploys automatically from the master branch to a github page, which is attached to a custom domain."
         ],
         "image": "/media/orb.png",
         "imageBG": "linear-gradient(45deg, #BBC, #FFF)",
@@ -13,7 +13,7 @@
             "Flex"
         ],
         "links": {
-            "GitLab": "https://gitlab.com/orbonis-dev/home-server/portfolio"
+            "GitHub": "https://github.com/Orbonis/portfolio"
         }
     },
     {
